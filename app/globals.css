@@ -1,33 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Brand Colors ── */
-  --color-rojo: #8B1E1E;
-  --color-rojo-oscuro: #6B1515;
-  --color-oro: #C8A45A;
-  --color-oro-claro: #D4B46B;
-  --color-carbon: #1E1E1E;
-  --color-carbon-suave: #2D2D2D;
-  --color-arena: #F2EFE8;
-  --color-arena-oscura: #E5E1D8;
+  /* ── Brand Colors — Lujo Contemporáneo ── */
+  --color-noir: #111111;
+  --color-carbon: #1a1a1a;
+  --color-grafito: #222222;
+  --color-linea: #2e2a25;
+  --color-oro: #b38b4d;
+  --color-champagne: #c9a96e;
+  --color-bronce: #8b6b3d;
+  --color-crema: #e6e1d6;
 
   /* ── Typography ── */
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-serif: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-montserrat), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-cinzel), "Trajan Pro", Georgia, serif;
+  --font-script: var(--font-pinyon), cursive;
 
-  /* ── Transitions ── */
-  --ease-brand: cubic-bezier(0.4, 0, 0.2, 1);
+  /* ── Motion ── */
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-ken-burns: ken-burns 22s ease-out both;
+  @keyframes ken-burns {
+    from {
+      transform: scale(1.12);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #1E1E1E;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+  --background: #111111;
+  --foreground: #e6e1d6;
+  color-scheme: dark;
 }
 
 html {
@@ -37,27 +43,116 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter, system-ui), sans-serif;
+  font-family: var(--font-sans);
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Prevent dark mode override */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #ffffff;
-    --foreground: #1E1E1E;
+::selection {
+  background: #b38b4d;
+  color: #111111;
+}
+
+/* ── Utilities ─────────────────────────────────────────────────────────── */
+
+/* Outline gold button: hover inverts to solid gold with dark text */
+@utility btn-oro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  border: 1px solid var(--color-oro);
+  background: transparent;
+  color: var(--color-champagne);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition:
+    background-color 400ms var(--ease-lux),
+    color 400ms var(--ease-lux),
+    border-color 400ms var(--ease-lux);
+  &:hover {
+    background: var(--color-oro);
+    color: var(--color-noir);
+  }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
 
-/* Scrollbar brand styling */
+/* Solid gold button: hover inverts to outline */
+@utility btn-oro-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.25rem;
+  border: 1px solid var(--color-oro);
+  background: var(--color-oro);
+  color: var(--color-noir);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  transition:
+    background-color 400ms var(--ease-lux),
+    color 400ms var(--ease-lux);
+  &:hover {
+    background: transparent;
+    color: var(--color-champagne);
+  }
+}
+
+@utility eyebrow {
+  display: block;
+  color: var(--color-oro);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+}
+
+@utility divider-oro {
+  display: block;
+  width: 4rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-oro), transparent);
+}
+
+/* Subtle linen texture, like the brand board backgrounds */
+@utility texture-lino {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.9 0 0 0 0 0.85 0 0 0 0 0.75 0 0 0 0.03 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    repeating-linear-gradient(0deg, rgb(255 255 255 / 0.006) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 0.006) 0 1px, transparent 1px 3px);
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F2EFE8;
+  background: #111111;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C8A45A;
-  border-radius: 3px;
+  background: #8b6b3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

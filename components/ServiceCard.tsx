@@ -1,24 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-import {
-  Home,
-  Building2,
-  Factory,
-  Star,
-  ChevronsUpDown,
-  Layers,
-  Wrench,
-  ArrowRight,
-} from "lucide-react";
-
-const ICON_MAP: Record<string, React.ElementType> = {
-  home: Home,
-  building: Building2,
-  factory: Factory,
-  star: Star,
-  expand: ChevronsUpDown,
-  layers: Layers,
-  wrench: Wrench,
-};
+import { SERVICE_ICONS, SpecialIcon, ArrowIcon } from "@/components/icons/LuxuryIcons";
+import { IMAGES } from "@/lib/images";
 
 interface ServiceCardProps {
   id: string;
@@ -26,67 +9,63 @@ interface ServiceCardProps {
   shortDesc: string;
   icon: string;
   href: string;
-  variant?: "light" | "dark";
+  specs?: string[];
 }
 
 export default function ServiceCard({
+  id,
   title,
   shortDesc,
   icon,
   href,
-  variant = "light",
+  specs = [],
 }: ServiceCardProps) {
-  const Icon = ICON_MAP[icon] ?? Star;
-  const isDark = variant === "dark";
+  const Icon = SERVICE_ICONS[icon] ?? SpecialIcon;
+  const image = IMAGES.services[id];
 
   return (
     <Link
       href={href}
-      className={`group relative flex flex-col p-7 border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
-        isDark
-          ? "bg-carbon-suave border-white/10 hover:border-oro/40"
-          : "bg-white border-arena-oscura hover:border-oro/60 hover:shadow-oro/10"
-      }`}
+      className="group relative flex flex-col h-full bg-carbon border border-linea overflow-hidden transition-all duration-700 ease-lux hover:-translate-y-2 hover:border-oro/50 hover:shadow-[0_30px_60px_-30px_rgb(179_139_77/0.35)]"
     >
-      {/* Icon */}
-      <div
-        className={`w-12 h-12 flex items-center justify-center mb-5 rounded-sm transition-colors duration-300 ${
-          isDark
-            ? "bg-rojo/10 text-oro group-hover:bg-rojo/20"
-            : "bg-arena text-rojo group-hover:bg-rojo group-hover:text-white"
-        }`}
-      >
-        <Icon size={22} aria-hidden="true" />
+      {/* Image */}
+      <div className="relative aspect-4/3 overflow-hidden bg-grafito">
+        {image && (
+          <Image
+            src={image}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover grayscale-35 brightness-75 transition-all duration-1200 ease-lux group-hover:scale-105 group-hover:grayscale-0"
+          />
+        )}
+        <div className="absolute inset-0 bg-noir/0 transition-colors duration-500 group-hover:bg-noir/65" />
+        <div className="absolute inset-0 bg-linear-to-t from-carbon via-carbon/10 to-transparent" />
+
+        {/* Technical details, revealed on hover */}
+        {specs.length > 0 && (
+          <ul className="absolute inset-x-0 bottom-0 p-6 flex flex-col gap-2 translate-y-4 opacity-0 transition-all duration-500 ease-lux group-hover:translate-y-0 group-hover:opacity-100">
+            {specs.map((s) => (
+              <li key={s} className="flex items-center gap-3 text-[11px] tracking-[0.12em] text-crema">
+                <span className="w-3 h-px bg-oro shrink-0" />
+                {s}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Text */}
-      <h3
-        className={`font-serif text-lg font-semibold mb-2 transition-colors duration-200 ${
-          isDark ? "text-white group-hover:text-oro" : "text-carbon group-hover:text-rojo"
-        }`}
-      >
-        {title}
-      </h3>
-      <p
-        className={`text-sm leading-relaxed flex-1 ${
-          isDark ? "text-white/50" : "text-carbon/60"
-        }`}
-      >
-        {shortDesc}
-      </p>
-
-      {/* Arrow */}
-      <div
-        className={`flex items-center gap-1 mt-5 text-xs font-semibold tracking-wide transition-colors duration-200 ${
-          isDark ? "text-oro/60 group-hover:text-oro" : "text-rojo/60 group-hover:text-rojo"
-        }`}
-      >
-        Ver más
-        <ArrowRight
-          size={12}
-          className="transition-transform duration-200 group-hover:translate-x-1"
-          aria-hidden="true"
-        />
+      <div className="relative flex flex-col flex-1 px-7 pb-8 pt-2">
+        <Icon className="w-9 h-9 text-oro mb-5" />
+        <h3 className="font-serif text-lg text-white tracking-[0.06em] mb-3 transition-colors duration-300 group-hover:text-champagne">
+          {title}
+        </h3>
+        <p className="text-crema/60 text-sm leading-relaxed flex-1">{shortDesc}</p>
+        <span className="flex items-center gap-3 mt-7 text-[10px] tracking-[0.3em] uppercase text-oro/70 transition-colors duration-300 group-hover:text-oro">
+          Descubrir
+          <ArrowIcon className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1.5" />
+        </span>
       </div>
     </Link>
   );

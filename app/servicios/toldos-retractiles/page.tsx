@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import PageHero from "@/components/ui/PageHero";
+import SectionHeading from "@/components/ui/SectionHeading";
+import CtaSection from "@/components/ui/CtaSection";
+import Reveal from "@/components/ui/Reveal";
+import { SITE_URL } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
+import { ShieldIcon, ComfortIcon, RetractableIcon } from "@/components/icons/LuxuryIcons";
 
 export const metadata: Metadata = {
   title: "Toldos Retráctiles Guadalajara — Motorizados y Manuales",
@@ -34,128 +39,79 @@ const FEATURES = [
   },
 ];
 
+const WHY = [
+  { Icon: ShieldIcon, title: "Protección solar", desc: "Reduce hasta 95% la radiación UV en tu terraza." },
+  { Icon: ComfortIcon, title: "Protección climática", desc: "Disfruta tu espacio bajo lluvia ligera y viento moderado." },
+  { Icon: RetractableIcon, title: "Control inteligente", desc: "Motorización con app, voz o sensor automático." },
+];
+
 export default function ToldosRetractilesPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-carbon py-24 sm:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center gap-2 text-xs text-white/40 mb-8" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-oro transition-colors">Inicio</Link>
-            <span>/</span>
-            <Link href="/servicios" className="hover:text-oro transition-colors">Servicios</Link>
-            <span>/</span>
-            <span className="text-oro">Toldos Retráctiles</span>
-          </nav>
-          <p className="text-oro text-xs font-semibold tracking-[0.35em] uppercase mb-4">
-            Sistemas retráctiles
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            Toldos Retráctiles{" "}
-            <span className="text-oro">en Guadalajara</span>
-          </h1>
-          <div className="w-16 h-px bg-oro mb-6" />
-          <p className="text-white/60 text-base sm:text-lg max-w-2xl leading-relaxed">
-            Instalamos sistemas retráctiles manuales y motorizados de las mejores
-            marcas europeas. Brazos articulados, cofres, pérgolas bioclimáticas y
-            automatización Somfy para el máximo confort.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Sistemas retráctiles"
+        title={
+          <>
+            Toldos Retráctiles <span className="text-champagne">en Guadalajara</span>
+          </>
+        }
+        subtitle="Sistemas retráctiles manuales y motorizados de las mejores marcas europeas. Brazos articulados, cofres, pérgolas bioclimáticas y automatización Somfy para el máximo confort."
+        image={IMAGES.pageHero.retractiles}
+        imageAlt="Terraza de madera con camastros frente al mar"
+        breadcrumb={[
+          { label: "Inicio", href: "/" },
+          { label: "Servicios", href: "/servicios" },
+          { label: "Toldos Retráctiles" },
+        ]}
+      />
 
-      {/* Features */}
-      <section className="py-20 sm:py-28 bg-arena" aria-labelledby="features-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            id="features-heading"
-            className="font-serif text-2xl md:text-3xl font-bold text-carbon text-center mb-14"
-          >
-            Sistemas disponibles
-          </h2>
+      {/* Systems */}
+      <section className="py-28 md:py-40 bg-noir" aria-labelledby="features-heading">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading id="features-heading" eyebrow="Catálogo" title="Sistemas disponibles" />
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {FEATURES.map((f) => (
-              <div
+            {FEATURES.map((f, i) => (
+              <Reveal
                 key={f.title}
-                className="bg-white border border-arena-oscura p-8 hover:border-oro/50 hover:shadow-md transition-all duration-300"
+                delay={(i % 2) * 0.1}
+                className="group bg-carbon border border-linea p-10 md:p-12 transition-all duration-700 ease-lux hover:-translate-y-1 hover:border-oro/50"
               >
-                <h3 className="font-serif text-xl font-bold text-carbon mb-3">
+                <span className="block font-serif text-sm text-oro/60 tracking-[0.2em] mb-6">
+                  0{i + 1}
+                </span>
+                <h3 className="font-serif text-xl text-white tracking-[0.06em] mb-4 transition-colors group-hover:text-champagne">
                   {f.title}
                 </h3>
-                <p className="text-carbon/60 text-sm leading-relaxed">{f.desc}</p>
-              </div>
+                <p className="text-crema/60 text-sm leading-relaxed">{f.desc}</p>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why retractable */}
-      <section className="py-20 sm:py-28 bg-white" aria-labelledby="why-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            id="why-heading"
-            className="font-serif text-3xl font-bold text-carbon text-center mb-10"
-          >
-            ¿Por qué elegir un toldo retráctil?
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-            {[
-              {
-                icon: "☀️",
-                title: "Protección solar",
-                desc: "Reduce hasta 95% la radiación UV en tu terraza.",
-              },
-              {
-                icon: "🌧️",
-                title: "Protección climática",
-                desc: "Disfruta tu espacio bajo lluvia ligera y viento moderado.",
-              },
-              {
-                icon: "📱",
-                title: "Control inteligente",
-                desc: "Motorización con app, voz o sensor automático.",
-              },
-            ].map((item) => (
-              <div key={item.title}>
-                <span className="text-4xl mb-4 block" aria-hidden="true">
-                  {item.icon}
-                </span>
-                <h3 className="font-serif text-lg font-bold text-carbon mb-2">
-                  {item.title}
+      {/* Why */}
+      <section className="py-28 md:py-40 bg-grafito texture-lino" aria-labelledby="why-heading">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading id="why-heading" eyebrow="Beneficios" title="¿Por qué un toldo retráctil?" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-14 text-center">
+            {WHY.map(({ Icon, title, desc }, i) => (
+              <Reveal key={title} delay={i * 0.1}>
+                <Icon className="w-12 h-12 text-oro mx-auto mb-7" />
+                <h3 className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mb-3">
+                  {title}
                 </h3>
-                <p className="text-carbon/60 text-sm">{item.desc}</p>
-              </div>
+                <p className="text-crema/60 text-sm leading-relaxed">{desc}</p>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-rojo">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">
-            Solicita tu cotización de toldo retráctil
-          </h2>
-          <p className="text-white/70 text-sm mb-8">
-            Te visitamos, medimos y te entregamos presupuesto sin costo ni compromiso.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-rojo font-semibold text-sm hover:bg-arena transition-colors"
-            >
-              Cotizar por WhatsApp →
-            </a>
-            <Link
-              href="/contactenos"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-rojo transition-colors"
-            >
-              Enviar formulario
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CtaSection
+        title="Solicita tu cotización de toldo retráctil"
+        text="Te visitamos, medimos y te entregamos presupuesto sin costo ni compromiso."
+        secondary={{ label: "Enviar formulario", href: "/contactenos" }}
+      />
     </>
   );
 }

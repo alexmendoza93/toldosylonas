@@ -1,116 +1,88 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { WHATSAPP_URL } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-
-      {/* Background — replace with real photo:
-          <Image src="/images/hero.jpg" alt="Terraza con toldo elegante en Guadalajara" fill className="object-cover" priority />
-      */}
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(135deg, #0f0f0f 0%, #1E1E1E 40%, #2D1A1A 100%)",
-        }}
+    <section className="relative min-h-svh flex items-center justify-center overflow-hidden bg-noir">
+      <Image
+        src={IMAGES.hero}
+        alt="Residencia contemporánea con terraza iluminada al atardecer"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover animate-ken-burns"
       />
 
-      {/* Subtle geometric pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-5"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            #C8A45A 0px,
-            #C8A45A 1px,
-            transparent 1px,
-            transparent 60px
-          )`,
-        }}
-      />
+      {/* Light & shadow: darken edges, keep the warm center glow */}
+      <div className="absolute inset-0 bg-noir/55" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgb(17_17_17/0.55)_75%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-noir to-transparent" />
 
-      {/* Dark overlay (use this when you add a real photo) */}
-      <div className="absolute inset-0 bg-carbon/60" />
-
-      {/* Decorative gold line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-oro to-transparent" />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-        {/* Eyebrow */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 text-center">
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-oro text-xs sm:text-sm font-semibold tracking-[0.4em] uppercase mb-6"
+          transition={{ duration: 1, delay: 0.2, ease }}
+          className="eyebrow mb-8"
         >
           Arquitectura Exterior · Desde 2009
-        </motion.p>
+        </motion.span>
 
-        {/* H1 */}
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
+          transition={{ duration: 1.1, delay: 0.35, ease }}
+          className="font-serif text-[2.1rem] leading-[1.15] sm:text-5xl md:text-6xl lg:text-[4.25rem] text-white tracking-[0.05em]"
         >
-          Diseñamos espacios
-          <br />
-          <span className="text-oro">exteriores</span> para{" "}
-          <br className="hidden sm:block" />
-          vivirlos todo el año
+          Transformamos espacios exteriores en{" "}
+          <span className="text-champagne">experiencias extraordinarias</span>
         </motion.h1>
 
-        {/* Divider */}
-        <motion.div
+        <motion.span
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="w-24 h-px bg-oro mx-auto mb-6"
+          transition={{ duration: 1, delay: 0.7, ease }}
+          className="divider-oro mx-auto my-10 w-24"
         />
 
-        {/* Subheadline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-white/70 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          transition={{ duration: 1, delay: 0.8, ease }}
+          className="text-crema/75 text-[15px] sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Toldos y Lonas Guadalajara — fabricantes especializados en soluciones
-          de protección solar, diseño y arquitectura exterior para proyectos
-          residenciales y comerciales.
+          Toldos, pérgolas y sistemas de protección solar diseñados a la medida
+          para residencias y espacios comerciales en Guadalajara.
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 1, delay: 0.95, ease }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10"
         >
-          <Link
-            href="/galeria"
-            className="w-full sm:w-auto px-8 py-4 bg-white text-carbon font-semibold text-sm tracking-wide rounded-sm hover:bg-arena transition-colors duration-200"
-          >
-            Ver Proyectos
-          </Link>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 bg-rojo text-white font-semibold text-sm tracking-wide rounded-sm hover:bg-rojo-oscuro transition-colors duration-200"
+            className="btn-oro w-full sm:w-auto"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.528 5.85L.057 23.054a.75.75 0 0 0 .92.92l5.204-1.47A11.951 11.951 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.9 0-3.68-.516-5.212-1.416l-.374-.223-3.868 1.092 1.092-3.868-.223-.374A9.958 9.958 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
-            </svg>
-            Cotizar por WhatsApp
+            Solicitar diseño
           </a>
+          <Link
+            href="/galeria"
+            className="group text-[11px] tracking-[0.28em] uppercase text-crema/80 hover:text-white transition-colors"
+          >
+            Ver proyectos
+            <span className="block h-px w-full bg-oro/50 mt-2 origin-left transition-transform duration-500 group-hover:scale-x-50" />
+          </Link>
         </motion.div>
       </div>
 
@@ -118,15 +90,18 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        transition={{ delay: 1.6, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+        aria-hidden="true"
       >
-        <span className="text-white/30 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-oro/60 to-transparent"
-        />
+        <span className="text-crema/40 text-[9px] tracking-[0.4em] uppercase">Descubre</span>
+        <span className="relative block w-px h-12 bg-crema/15 overflow-hidden">
+          <motion.span
+            animate={{ y: ["-100%", "100%"] }}
+            transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
+            className="absolute inset-0 bg-oro"
+          />
+        </span>
       </motion.div>
     </section>
   );

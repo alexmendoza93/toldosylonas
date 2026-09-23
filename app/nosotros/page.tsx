@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import BrandsBar from "@/components/BrandsBar";
-import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import PageHero from "@/components/ui/PageHero";
+import SectionHeading from "@/components/ui/SectionHeading";
+import CtaSection from "@/components/ui/CtaSection";
+import Reveal from "@/components/ui/Reveal";
+import {
+  DiamondIcon,
+  ShieldIcon,
+  CrownIcon,
+  ComfortIcon,
+} from "@/components/icons/LuxuryIcons";
+import { SITE_URL } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Nosotros — Quiénes Somos",
@@ -41,130 +52,88 @@ const VALUES = [
   {
     title: "Diseño",
     desc: "Cada toldo es un elemento arquitectónico que debe integrarse al estilo del espacio.",
-    icon: "◈",
+    Icon: DiamondIcon,
   },
   {
     title: "Calidad",
     desc: "Usamos únicamente materiales con certificación internacional y vida útil garantizada.",
-    icon: "◆",
+    Icon: ShieldIcon,
   },
   {
     title: "Confianza",
     desc: "Más de 15 años entregando proyectos a tiempo, dentro del presupuesto y con garantía.",
-    icon: "◉",
+    Icon: CrownIcon,
   },
   {
     title: "Servicio",
     desc: "Acompañamos al cliente desde el diseño hasta la instalación y el mantenimiento.",
-    icon: "◎",
+    Icon: ComfortIcon,
   },
 ];
 
 export default function NosotrosPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-carbon py-24 sm:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-oro text-xs font-semibold tracking-[0.35em] uppercase mb-4">
-            Quiénes somos
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            15 años transformando{" "}
-            <span className="text-oro">espacios exteriores</span>
-          </h1>
-          <div className="w-16 h-px bg-oro mx-auto mb-6" />
-          <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Somos fabricantes especializados en toldos, lonas y sistemas de
-            protección solar en Guadalajara. Diseñamos, fabricamos e instalamos
-            cada proyecto con el rigor de un estudio de arquitectura exterior.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Estudio de diseño exterior"
+        title={
+          <>
+            15 años de <span className="text-champagne">arquitectura exterior</span>
+          </>
+        }
+        subtitle="Somos fabricantes especializados en toldos, lonas y sistemas de protección solar en Guadalajara. Diseñamos, fabricamos e instalamos cada proyecto con el rigor de un estudio de arquitectura."
+        image={IMAGES.pageHero.nosotros}
+        imageAlt="Residencia contemporánea iluminada al anochecer"
+      />
 
       {/* Values */}
-      <section className="py-20 sm:py-28 bg-arena" aria-labelledby="values-heading">
+      <section className="py-28 md:py-40 bg-noir" aria-labelledby="values-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            id="values-heading"
-            className="font-serif text-2xl md:text-3xl font-bold text-carbon text-center mb-14"
-          >
-            Nuestros valores
-          </h2>
+          <SectionHeading id="values-heading" eyebrow="Filosofía" title="Nuestros valores" />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {VALUES.map((v) => (
-              <div
-                key={v.title}
-                className="bg-white border border-arena-oscura p-8 text-center hover:border-oro/50 hover:shadow-md transition-all duration-300"
+            {VALUES.map(({ title, desc, Icon }, i) => (
+              <Reveal
+                key={title}
+                delay={i * 0.1}
+                className="bg-carbon border border-linea p-10 text-center transition-colors duration-500 hover:border-oro/50"
               >
-                <span className="text-4xl text-oro block mb-4" aria-hidden="true">
-                  {v.icon}
-                </span>
-                <h3 className="font-serif text-xl font-bold text-carbon mb-3">
-                  {v.title}
-                </h3>
-                <p className="text-carbon/60 text-sm leading-relaxed">{v.desc}</p>
-              </div>
+                <Icon className="w-11 h-11 text-oro mx-auto mb-7" />
+                <h3 className="font-serif text-lg text-white tracking-[0.1em] mb-4">{title}</h3>
+                <p className="text-crema/60 text-sm leading-relaxed">{desc}</p>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="py-20 sm:py-28 bg-white" aria-labelledby="timeline-heading">
+      <section className="py-28 md:py-40 bg-grafito texture-lino" aria-labelledby="timeline-heading">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-oro text-xs font-semibold tracking-[0.35em] uppercase mb-3">
-              Historia
-            </p>
-            <h2
-              id="timeline-heading"
-              className="font-serif text-3xl md:text-4xl font-bold text-carbon"
-            >
-              Nuestra trayectoria
-            </h2>
-          </div>
-          <ol className="relative border-l-2 border-arena-oscura pl-8 flex flex-col gap-10">
-            {TIMELINE.map((item) => (
-              <li key={item.year} className="relative">
-                <span className="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-oro border-2 border-white flex items-center justify-center">
-                  <span className="w-2 h-2 rounded-full bg-white" />
-                </span>
-                <span className="text-oro text-xs font-bold tracking-[0.2em]">
+          <SectionHeading id="timeline-heading" eyebrow="Historia" title="Nuestra trayectoria" />
+          <ol className="relative border-l border-oro/30 pl-10 flex flex-col gap-14">
+            {TIMELINE.map((item, i) => (
+              <Reveal as="li" key={item.year} delay={i * 0.05} className="relative">
+                <span className="absolute -left-[45px] top-1.5 w-2.5 h-2.5 rotate-45 bg-oro" />
+                <span className="font-serif text-2xl text-champagne tracking-[0.1em]">
                   {item.year}
                 </span>
-                <h3 className="font-serif text-lg font-bold text-carbon mt-1 mb-2">
+                <h3 className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mt-3 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-carbon/60 text-sm leading-relaxed">{item.desc}</p>
-              </li>
+                <p className="text-crema/60 text-sm leading-relaxed">{item.desc}</p>
+              </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* Brands */}
       <BrandsBar />
 
-      {/* CTA */}
-      <section className="py-20 bg-rojo">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-bold text-white mb-4">
-            ¿Tienes un proyecto en mente?
-          </h2>
-          <p className="text-white/70 text-sm mb-8">
-            Platícanos tu idea y juntos diseñamos la solución perfecta.
-          </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-rojo font-semibold text-sm tracking-wide hover:bg-arena transition-colors duration-200"
-          >
-            Cotizar por WhatsApp →
-          </a>
-        </div>
-      </section>
+      <CtaSection
+        title="¿Tienes un proyecto en mente?"
+        text="Platícanos tu idea y juntos diseñamos la solución perfecta para tu espacio."
+        secondary={{ label: "Enviar formulario", href: "/contactenos" }}
+      />
     </>
   );
 }

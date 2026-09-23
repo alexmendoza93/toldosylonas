@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Cinzel, Montserrat, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -10,17 +10,26 @@ import {
   SEO_KEYWORDS,
 } from "@/lib/constants";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const cinzel = Cinzel({
+  variable: "--font-cinzel",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "500", "600"],
+});
+
+// Script accent for the brand line "Diseñamos experiencias."
+const pinyon = Pinyon_Script({
+  variable: "--font-pinyon",
+  subsets: ["latin"],
+  display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -118,7 +127,7 @@ export default function RootLayout({
   return (
     <html
       lang="es-MX"
-      className={`${playfair.variable} ${inter.variable}`}
+      className={`${cinzel.variable} ${montserrat.variable} ${pinyon.variable}`}
     >
       <head>
         <script
@@ -126,9 +135,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className="min-h-screen flex flex-col antialiased bg-noir text-crema">
         <Navbar />
-        <main className="flex-1 pt-16 md:pt-20">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <FloatingWhatsApp />
       </body>

@@ -3,7 +3,9 @@
 import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { IMAGES } from "@/lib/images";
 
 export interface GalleryImage {
   src: string;
@@ -14,50 +16,50 @@ export interface GalleryImage {
   height: number;
 }
 
-// Placeholder images — replace with real project photos
-// Place photos in public/images/projects/ and update this list
+// Temporary photos (lib/images.ts) — replace with real project photos
+// placed in public/images/projects/
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
-    src: "/images/projects/placeholder-1.svg",
+    src: IMAGES.gallery[0],
     alt: "Toldo residencial en terraza de casa en Zapopan",
     category: "Residencial",
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1067,
   },
   {
-    src: "/images/projects/placeholder-2.svg",
+    src: IMAGES.gallery[1],
     alt: "Sistema comercial en restaurante de Guadalajara",
     category: "Comercial",
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1067,
   },
   {
-    src: "/images/projects/placeholder-3.svg",
+    src: IMAGES.gallery[2],
     alt: "Toldo retráctil en jardín residencial",
     category: "Residencial",
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1067,
   },
   {
-    src: "/images/projects/placeholder-4.svg",
+    src: IMAGES.gallery[3],
     alt: "Cubierta textil en terraza de hotel en Guadalajara",
     category: "Comercial",
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1067,
   },
   {
-    src: "/images/projects/placeholder-5.svg",
+    src: IMAGES.gallery[4],
     alt: "Lona industrial para bodega en zona metropolitana",
     category: "Industrial",
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1067,
   },
   {
-    src: "/images/projects/placeholder-6.svg",
+    src: IMAGES.gallery[5],
     alt: "Proyecto especial - pérgola con vela de sombra",
     category: "Especial",
-    width: 800,
-    height: 600,
+    width: 1600,
+    height: 1067,
   },
 ];
 
@@ -82,16 +84,17 @@ export default function ProjectGallery({ limit, showFilters = true }: Props) {
   return (
     <>
       {showFilters && (
-        <div className="flex flex-wrap gap-2 mb-8 justify-center">
+        <div className="flex flex-wrap gap-3 mb-14 justify-center">
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-1.5 text-xs font-semibold tracking-wide rounded-sm border transition-colors duration-200 ${
+              className={`px-5 py-2.5 text-[10px] tracking-[0.3em] uppercase border transition-colors duration-500 ${
                 activeCategory === cat
-                  ? "bg-rojo text-white border-rojo"
-                  : "bg-white text-carbon border-arena-oscura hover:border-rojo hover:text-rojo"
+                  ? "bg-oro text-noir border-oro"
+                  : "text-crema/70 border-linea hover:border-oro hover:text-oro"
               }`}
+              aria-pressed={activeCategory === cat}
             >
               {cat}
             </button>
@@ -99,7 +102,7 @@ export default function ProjectGallery({ limit, showFilters = true }: Props) {
         </div>
       )}
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
         {displayed.map((img, i) => (
           <motion.button
             key={img.src}
@@ -110,37 +113,31 @@ export default function ProjectGallery({ limit, showFilters = true }: Props) {
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.35, delay: i * 0.05 }}
-            className="group relative aspect-[4/3] overflow-hidden bg-arena-oscura text-left"
+            className="group relative aspect-[4/3] overflow-hidden bg-carbon text-left"
             aria-label={`Ver foto: ${img.alt}`}
           >
-            {/* Placeholder gradient (replace with Next.js Image when photos are available) */}
-            <div
-              className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-              style={{
-                background: `linear-gradient(135deg, hsl(${(i * 60) % 360} 20% 30%) 0%, hsl(${(i * 60 + 40) % 360} 15% 20%) 100%)`,
-              }}
-              aria-hidden="true"
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+              className="object-cover grayscale brightness-75 transition-all duration-1000 ease-lux group-hover:grayscale-0 group-hover:brightness-90 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-linear-to-t from-noir/90 via-noir/10 to-transparent" />
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-carbon/0 group-hover:bg-carbon/40 transition-colors duration-300" />
-
-            {/* Category badge */}
-            <span className="absolute top-3 left-3 px-2 py-0.5 bg-carbon/60 text-white text-[10px] font-semibold tracking-wide rounded-full backdrop-blur-sm">
-              {img.category}
-            </span>
-
-            {/* Zoom icon */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                </svg>
+            <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-between gap-4">
+              <div>
+                <span className="eyebrow text-[9px]! mb-2">{img.category}</span>
+                <p className="text-crema text-sm leading-snug max-w-[26ch] translate-y-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                  {img.alt}
+                </p>
               </div>
+              <span className="w-10 h-10 shrink-0 border border-oro/60 text-oro flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.25} viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+              </span>
             </div>
-
-            {/* Alt text for SEO */}
-            <p className="sr-only">{img.alt}</p>
           </motion.button>
         ))}
       </div>
@@ -155,6 +152,7 @@ export default function ProjectGallery({ limit, showFilters = true }: Props) {
           width: img.width,
           height: img.height,
         }))}
+        styles={{ container: { backgroundColor: "rgba(17, 17, 17, 0.97)" } }}
       />
     </>
   );

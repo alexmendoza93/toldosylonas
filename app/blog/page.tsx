@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import PageHero from "@/components/ui/PageHero";
+import CtaSection from "@/components/ui/CtaSection";
+import Reveal from "@/components/ui/Reveal";
+import { SITE_URL } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Blog — Consejos sobre Toldos y Protección Solar",
@@ -40,40 +43,32 @@ const POSTS = [
 export default function BlogPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-carbon py-24 sm:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-oro text-xs font-semibold tracking-[0.35em] uppercase mb-4">
-            Recursos
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            <span className="text-oro">Guías</span> y consejos
-          </h1>
-          <div className="w-16 h-px bg-oro mx-auto mb-6" />
-          <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto">
-            Todo lo que necesitas saber sobre toldos, materiales y protección
-            solar antes de tomar una decisión.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Journal"
+        title={
+          <>
+            <span className="text-champagne">Guías</span> y consejos
+          </>
+        }
+        subtitle="Todo lo que necesitas saber sobre toldos, materiales y protección solar antes de tomar una decisión."
+        image={IMAGES.pageHero.blog}
+        imageAlt="Interior con ventanales hacia una terraza"
+      />
 
-      {/* Posts */}
-      <section className="py-20 sm:py-28 bg-arena">
+      <section className="py-24 md:py-32 bg-noir">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col gap-6">
-            {POSTS.map((post) => (
-              <article
+          <div className="flex flex-col border-t border-linea">
+            {POSTS.map((post, i) => (
+              <Reveal
+                as="article"
                 key={post.slug}
-                className="bg-white border border-arena-oscura p-8 hover:border-oro/50 hover:shadow-md transition-all duration-300"
+                delay={i * 0.08}
+                className="group py-12 border-b border-linea"
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-semibold tracking-wide text-oro bg-arena px-2 py-0.5 rounded-full">
-                    {post.category}
-                  </span>
-                  <time
-                    dateTime={post.date}
-                    className="text-xs text-carbon/40"
-                  >
+                <div className="flex items-center gap-5 mb-5">
+                  <span className="eyebrow text-[9px]!">{post.category}</span>
+                  <span className="w-6 h-px bg-linea" />
+                  <time dateTime={post.date} className="text-[11px] tracking-wide text-crema/40">
                     {new Date(post.date).toLocaleDateString("es-MX", {
                       year: "numeric",
                       month: "long",
@@ -81,37 +76,23 @@ export default function BlogPage() {
                     })}
                   </time>
                 </div>
-                <h2 className="font-serif text-xl font-bold text-carbon mb-3">
+                <h2 className="font-serif text-xl md:text-2xl text-white tracking-[0.04em] leading-snug mb-4 transition-colors group-hover:text-champagne">
                   {post.title}
                 </h2>
-                <p className="text-carbon/60 text-sm leading-relaxed mb-5">
-                  {post.excerpt}
-                </p>
-                <span className="text-rojo text-xs font-semibold tracking-wide">
-                  Próximamente →
-                </span>
-              </article>
+                <p className="text-crema/60 text-sm leading-relaxed mb-6 max-w-2xl">{post.excerpt}</p>
+                <span className="text-[10px] tracking-[0.3em] uppercase text-oro/70">Próximamente</span>
+              </Reveal>
             ))}
-          </div>
-
-          <div className="mt-12 p-8 bg-carbon text-center">
-            <p className="font-serif text-xl font-bold text-white mb-3">
-              ¿Tienes una pregunta específica?
-            </p>
-            <p className="text-white/60 text-sm mb-6">
-              Escríbenos directamente y te respondemos con asesoría personalizada.
-            </p>
-            <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-oro text-carbon font-semibold text-sm hover:bg-oro-claro transition-colors"
-            >
-              Preguntar por WhatsApp →
-            </a>
           </div>
         </div>
       </section>
+
+      <CtaSection
+        eyebrow="Asesoría"
+        title="¿Tienes una pregunta específica?"
+        text="Escríbenos directamente y te respondemos con asesoría personalizada."
+        primaryLabel="Preguntar por WhatsApp"
+      />
     </>
   );
 }

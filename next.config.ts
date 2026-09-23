@@ -1,6 +1,12 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // A stray lockfile in the home folder makes Turbopack pick ~ as the root
+  // and watch the whole user directory (runs out of memory). Pin it here.
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
   async redirects() {
     return [
       // Preserve SEO for pages that move to new URL structure
@@ -63,7 +69,9 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [],
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+    ],
   },
 };
 

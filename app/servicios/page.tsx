@@ -1,7 +1,34 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ServiceCard from "@/components/ServiceCard";
-import { SERVICES, SITE_URL, WHATSAPP_URL } from "@/lib/constants";
+import PageHero from "@/components/ui/PageHero";
+import SectionHeading from "@/components/ui/SectionHeading";
+import CtaSection from "@/components/ui/CtaSection";
+import Reveal from "@/components/ui/Reveal";
+import { SERVICES, SITE_URL } from "@/lib/constants";
+import { IMAGES } from "@/lib/images";
+
+const PROCESS = [
+  {
+    step: "01",
+    title: "Cotización",
+    desc: "Nos platican su proyecto, visitamos el espacio y entregamos presupuesto detallado sin costo.",
+  },
+  {
+    step: "02",
+    title: "Diseño",
+    desc: "Seleccionamos materiales, colores y sistemas que se adapten al estilo y necesidades del espacio.",
+  },
+  {
+    step: "03",
+    title: "Fabricación",
+    desc: "Fabricamos en nuestra planta de Guadalajara con control de calidad en cada etapa.",
+  },
+  {
+    step: "04",
+    title: "Instalación",
+    desc: "Instalamos con equipo especializado y dejamos todo funcionando con garantía escrita.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Servicios — Toldos Residenciales, Comerciales e Industriales",
@@ -38,109 +65,67 @@ export default function ServiciosPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
 
-      {/* Header */}
-      <section className="bg-carbon py-24 sm:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-oro text-xs font-semibold tracking-[0.35em] uppercase mb-4">
-            Catálogo de servicios
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
-            Soluciones para{" "}
-            <span className="text-oro">cada espacio</span>
-          </h1>
-          <div className="w-16 h-px bg-oro mx-auto mb-6" />
-          <p className="text-white/60 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Diseñamos, fabricamos e instalamos toldos y sistemas de protección
-            solar para proyectos residenciales, comerciales e industriales en
-            Guadalajara y zona metropolitana.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Arquitectura Exterior"
+        title={
+          <>
+            Soluciones para <span className="text-champagne">cada espacio</span>
+          </>
+        }
+        subtitle="Diseñamos, fabricamos e instalamos toldos y sistemas de protección solar para proyectos residenciales, comerciales e industriales en Guadalajara y zona metropolitana."
+        image={IMAGES.pageHero.servicios}
+        imageAlt="Terraza con pérgola y alberca en residencia contemporánea"
+        breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Servicios" }]}
+      />
 
-      {/* Services grid */}
-      <section className="py-20 sm:py-28 bg-arena">
+      {/* Catalog */}
+      <section className="py-28 md:py-40 bg-noir" aria-labelledby="catalog-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SERVICES.map((service) => (
-              <div key={service.id} id={service.id}>
-                <ServiceCard {...service} />
-              </div>
+          <SectionHeading
+            id="catalog-heading"
+            eyebrow="Catálogo"
+            title="Nuestras líneas de producto"
+            subtitle="Pasa el cursor sobre cada pieza para conocer sus detalles técnicos."
+          />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((service, i) => (
+              <Reveal
+                key={service.id}
+                delay={(i % 3) * 0.1}
+                className="h-full scroll-mt-28"
+              >
+                <div id={service.id} className="h-full">
+                  <ServiceCard {...service} />
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* Process */}
-      <section className="py-20 sm:py-28 bg-white" aria-labelledby="process-heading">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-oro text-xs font-semibold tracking-[0.35em] uppercase mb-3">
-              Proceso
-            </p>
-            <h2
-              id="process-heading"
-              className="font-serif text-3xl md:text-4xl font-bold text-carbon"
-            >
-              ¿Cómo trabajamos?
-            </h2>
-          </div>
-
-          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                step: "01",
-                title: "Cotización",
-                desc: "Nos platican su proyecto, visitamos el espacio y entregamos presupuesto detallado sin costo.",
-              },
-              {
-                step: "02",
-                title: "Diseño",
-                desc: "Seleccionamos materiales, colores y sistemas que se adapten al estilo y necesidades del espacio.",
-              },
-              {
-                step: "03",
-                title: "Fabricación",
-                desc: "Fabricamos en nuestra planta de Guadalajara con control de calidad en cada etapa.",
-              },
-              {
-                step: "04",
-                title: "Instalación",
-                desc: "Instalamos con equipo especializado y dejamos todo funcionando con garantía escrita.",
-              },
-            ].map((item) => (
-              <li key={item.step} className="relative">
-                <span className="block font-serif text-5xl font-bold text-oro/20 mb-3">
-                  {item.step}
-                </span>
-                <h3 className="font-serif text-lg font-bold text-carbon mb-2">
+      <section className="py-28 md:py-40 bg-grafito texture-lino" aria-labelledby="process-heading">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading id="process-heading" eyebrow="Proceso" title="¿Cómo trabajamos?" />
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+            {PROCESS.map((item, i) => (
+              <Reveal as="li" key={item.step} delay={i * 0.1} className="border-t border-oro/40 pt-8">
+                <span className="block font-serif text-5xl text-oro/35 mb-6">{item.step}</span>
+                <h3 className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-carbon/60 text-sm leading-relaxed">{item.desc}</p>
-              </li>
+                <p className="text-crema/60 text-sm leading-relaxed">{item.desc}</p>
+              </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-rojo">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-4">
-            ¿No encuentras lo que necesitas?
-          </h2>
-          <p className="text-white/70 text-sm mb-8">
-            Contamos con experiencia en proyectos especiales. Escríbenos y encontramos la solución.
-          </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-rojo font-semibold text-sm tracking-wide hover:bg-arena transition-colors duration-200"
-          >
-            Consultar por WhatsApp →
-          </a>
-        </div>
-      </section>
+      <CtaSection
+        title="¿No encuentras lo que necesitas?"
+        text="Contamos con experiencia en proyectos especiales. Escríbenos y diseñamos la solución a tu medida."
+        primaryLabel="Consultar por WhatsApp"
+      />
     </>
   );
 }
