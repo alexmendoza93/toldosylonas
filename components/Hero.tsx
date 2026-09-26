@@ -20,28 +20,26 @@ export default function Hero() {
         className="object-cover animate-ken-burns"
       />
 
-      {/* Light & shadow: darken edges, keep the warm center glow */}
-      <div className="absolute inset-0 bg-noir/55" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgb(17_17_17/0.55)_75%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-noir to-transparent" />
+      {/* Fade into the dark page below; the rest of the photo stays clear */}
+      <div className="absolute inset-x-0 -bottom-px h-172 bg-linear-to-t from-noir to-transparent" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 text-center text-shadow-lg text-shadow-noir/50">
         <motion.span
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease }}
           className="eyebrow mb-8"
         >
-          Arquitectura Exterior · Desde 2009
+          Protección Solar · Desde 2009
         </motion.span>
 
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.35, ease }}
-          className="font-serif text-[2.1rem] leading-[1.15] sm:text-5xl md:text-6xl lg:text-[4.25rem] text-white tracking-[0.05em]"
+          className="type-display text-white"
         >
-          Transformamos espacios exteriores en{" "}
+          Transformamos tus espacios en{" "}
           <span className="text-champagne">experiencias extraordinarias</span>
         </motion.h1>
 
@@ -56,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease }}
-          className="text-crema/75 text-[15px] sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="type-lead text-white/80 max-w-2xl mx-auto mb-12"
         >
           Toldos, pérgolas y sistemas de protección solar diseñados a la medida
           para residencias y espacios comerciales en Guadalajara.
@@ -78,7 +76,7 @@ export default function Hero() {
           </a>
           <Link
             href="/galeria"
-            className="group text-[11px] tracking-[0.28em] uppercase text-crema/80 hover:text-white transition-colors"
+            className="group type-action text-white/90 hover:text-white transition-colors"
           >
             Ver proyectos
             <span className="block h-px w-full bg-oro/50 mt-2 origin-left transition-transform duration-500 group-hover:scale-x-50" />
@@ -94,7 +92,9 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
         aria-hidden="true"
       >
-        <span className="text-crema/40 text-[9px] tracking-[0.4em] uppercase">Descubre</span>
+        <span className="type-meta text-crema/40">
+          Descubre
+        </span>
         <span className="relative block w-px h-12 bg-crema/15 overflow-hidden">
           <motion.span
             animate={{ y: ["-100%", "100%"] }}

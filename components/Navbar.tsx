@@ -60,7 +60,7 @@ export default function Navbar() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`group relative py-2 text-[11px] font-medium tracking-[0.24em] uppercase transition-colors duration-300 ${
+                    className={`group relative py-2 type-label transition-colors duration-300 ${
                       isActive(link.href)
                         ? "text-oro"
                         : "text-crema/80 hover:text-white"

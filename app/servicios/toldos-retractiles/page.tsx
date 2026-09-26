@@ -76,13 +76,13 @@ export default function ToldosRetractilesPage() {
                 delay={(i % 2) * 0.1}
                 className="group bg-carbon border border-linea p-10 md:p-12 transition-all duration-700 ease-lux hover:-translate-y-1 hover:border-oro/50"
               >
-                <span className="block font-serif text-sm text-oro/60 tracking-[0.2em] mb-6">
+                <span className="block type-meta text-oro/60 mb-6">
                   0{i + 1}
                 </span>
-                <h3 className="font-serif text-xl text-white tracking-[0.06em] mb-4 transition-colors group-hover:text-champagne">
+                <h3 className="type-h3 text-white mb-4 transition-colors group-hover:text-champagne">
                   {f.title}
                 </h3>
-                <p className="text-crema/60 text-sm leading-relaxed">{f.desc}</p>
+                <p className="type-small text-crema/60">{f.desc}</p>
               </Reveal>
             ))}
           </div>
@@ -97,10 +97,10 @@ export default function ToldosRetractilesPage() {
             {WHY.map(({ Icon, title, desc }, i) => (
               <Reveal key={title} delay={i * 0.1}>
                 <Icon className="w-12 h-12 text-oro mx-auto mb-7" />
-                <h3 className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mb-3">
+                <h3 className="type-label text-white mb-3">
                   {title}
                 </h3>
-                <p className="text-crema/60 text-sm leading-relaxed">{desc}</p>
+                <p className="type-small text-crema/60">{desc}</p>
               </Reveal>
             ))}
           </div>

@@ -98,8 +98,8 @@ export default function NosotrosPage() {
                 className="bg-carbon border border-linea p-10 text-center transition-colors duration-500 hover:border-oro/50"
               >
                 <Icon className="w-11 h-11 text-oro mx-auto mb-7" />
-                <h3 className="font-serif text-lg text-white tracking-[0.1em] mb-4">{title}</h3>
-                <p className="text-crema/60 text-sm leading-relaxed">{desc}</p>
+                <h3 className="type-h3 text-white mb-4">{title}</h3>
+                <p className="type-small text-crema/60">{desc}</p>
               </Reveal>
             ))}
           </div>
@@ -114,13 +114,13 @@ export default function NosotrosPage() {
             {TIMELINE.map((item, i) => (
               <Reveal as="li" key={item.year} delay={i * 0.05} className="relative">
                 <span className="absolute -left-[45px] top-1.5 w-2.5 h-2.5 rotate-45 bg-oro" />
-                <span className="font-serif text-2xl text-champagne tracking-[0.1em]">
+                <span className="type-h3 text-champagne">
                   {item.year}
                 </span>
-                <h3 className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mt-3 mb-3">
+                <h3 className="type-label text-white mt-3 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-crema/60 text-sm leading-relaxed">{item.desc}</p>
+                <p className="type-small text-crema/60">{item.desc}</p>
               </Reveal>
             ))}
           </ol>

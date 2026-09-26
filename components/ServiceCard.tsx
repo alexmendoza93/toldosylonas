@@ -46,7 +46,7 @@ export default function ServiceCard({
         {specs.length > 0 && (
           <ul className="absolute inset-x-0 bottom-0 p-6 flex flex-col gap-2 translate-y-4 opacity-0 transition-all duration-500 ease-lux group-hover:translate-y-0 group-hover:opacity-100">
             {specs.map((s) => (
-              <li key={s} className="flex items-center gap-3 text-[11px] tracking-[0.12em] text-crema">
+              <li key={s} className="flex items-center gap-3 type-small text-crema">
                 <span className="w-3 h-px bg-oro shrink-0" />
                 {s}
               </li>
@@ -58,11 +58,11 @@ export default function ServiceCard({
       {/* Text */}
       <div className="relative flex flex-col flex-1 px-7 pb-8 pt-2">
         <Icon className="w-9 h-9 text-oro mb-5" />
-        <h3 className="font-serif text-lg text-white tracking-[0.06em] mb-3 transition-colors duration-300 group-hover:text-champagne">
+        <h3 className="type-h3 text-white mb-3 transition-colors duration-300 group-hover:text-champagne">
           {title}
         </h3>
-        <p className="text-crema/60 text-sm leading-relaxed flex-1">{shortDesc}</p>
-        <span className="flex items-center gap-3 mt-7 text-[10px] tracking-[0.3em] uppercase text-oro/70 transition-colors duration-300 group-hover:text-oro">
+        <p className="type-small text-crema/60 flex-1">{shortDesc}</p>
+        <span className="flex items-center gap-3 mt-7 type-meta text-oro/70 transition-colors duration-300 group-hover:text-oro">
           Descubrir
           <ArrowIcon className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1.5" />
         </span>

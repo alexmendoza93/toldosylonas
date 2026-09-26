@@ -85,11 +85,11 @@ export default function PersianasRollerScreenPage() {
                 delay={i * 0.08}
                 className="group flex flex-col bg-carbon border border-linea p-8 transition-all duration-700 ease-lux hover:-translate-y-1 hover:border-oro/50"
               >
-                <span className="eyebrow text-[9px]! mb-6">{type.benefit}</span>
-                <h3 className="font-serif text-xl text-white tracking-[0.06em] mb-4">{type.name}</h3>
-                <p className="text-crema/60 text-sm leading-relaxed flex-1">{type.desc}</p>
-                <p className="mt-8 pt-5 border-t border-linea text-[10px] tracking-[0.2em] uppercase text-crema/45">
-                  Apertura <span className="block text-champagne text-xs mt-1.5 normal-case tracking-wide">{type.openness}</span>
+                <span className="block type-label text-oro mb-6">{type.benefit}</span>
+                <h3 className="type-h3 text-white mb-4">{type.name}</h3>
+                <p className="type-small text-crema/60 flex-1">{type.desc}</p>
+                <p className="mt-8 pt-5 border-t border-linea type-meta text-crema/45">
+                  Apertura <span className="block type-small text-champagne mt-1.5 normal-case tracking-normal">{type.openness}</span>
                 </p>
               </Reveal>
             ))}
@@ -106,10 +106,10 @@ export default function PersianasRollerScreenPage() {
               <Reveal key={b.title} delay={(i % 2) * 0.1} className="flex gap-6">
                 <span className="mt-2 w-2 h-2 rotate-45 bg-oro shrink-0" />
                 <div>
-                  <h3 className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mb-3">
+                  <h3 className="type-label text-white mb-3">
                     {b.title}
                   </h3>
-                  <p className="text-crema/60 text-sm leading-relaxed">{b.desc}</p>
+                  <p className="type-small text-crema/60">{b.desc}</p>
                 </div>
               </Reveal>
             ))}

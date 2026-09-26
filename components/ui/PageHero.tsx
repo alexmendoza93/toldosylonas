@@ -33,14 +33,14 @@ export default function PageHero({
         sizes="100vw"
         className="object-cover animate-ken-burns"
       />
-      <div className="absolute inset-0 bg-noir/60" />
-      <div className="absolute inset-0 bg-linear-to-t from-noir via-noir/40 to-noir/70" />
+      {/* Fade into the dark page below; the rest of the photo stays clear */}
+      <div className="absolute inset-x-0 -bottom-px h-64 bg-linear-to-t from-noir to-transparent" />
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 md:pb-24 text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-20 md:pb-24 text-center text-shadow-lg text-shadow-noir/50">
         {breadcrumb && (
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center justify-center gap-3 text-[10px] tracking-[0.3em] uppercase text-crema/45 mb-10"
+            className="flex items-center justify-center gap-3 type-meta text-crema/45 mb-10"
           >
             {breadcrumb.map((c, i) => (
               <span key={c.label} className="flex items-center gap-3">
@@ -57,12 +57,12 @@ export default function PageHero({
           </nav>
         )}
         <span className="eyebrow mb-6">{eyebrow}</span>
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.12] text-white tracking-[0.04em]">
+        <h1 className="type-display text-white">
           {title}
         </h1>
         <span className="divider-oro mx-auto mt-8" />
         {subtitle && (
-          <p className="text-crema/70 text-[15px] sm:text-base max-w-2xl mx-auto leading-relaxed mt-8">
+          <p className="type-lead text-crema/70 max-w-2xl mx-auto mt-8">
             {subtitle}
           </p>
         )}

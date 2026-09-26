@@ -36,26 +36,26 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "w-full px-0 py-3 bg-transparent border-0 border-b border-linea text-crema text-[15px] placeholder:text-crema/30 focus:outline-none focus:border-oro transition-colors duration-500 rounded-none";
+    "w-full px-0 py-3 bg-transparent border-0 border-b border-linea text-crema type-body placeholder:text-crema/30 focus:outline-none focus:border-oro transition-colors duration-500 rounded-none";
   const labelClass =
-    "block text-[10px] font-medium text-crema/55 tracking-[0.3em] uppercase mb-1";
+    "block type-label text-crema/55 mb-1";
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-start">
       {/* Left: info */}
       <div className="lg:col-span-5">
         <span className="eyebrow mb-5">Contacto</span>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight text-white tracking-[0.04em]">
+        <h2 className="type-h2 text-white">
           Diseñemos tu espacio
         </h2>
         <span className="divider-oro mt-7 mb-8" />
-        <p className="text-crema/65 text-[15px] leading-relaxed mb-10">
+        <p className="type-body text-crema/65 mb-10">
           Cuéntanos tu proyecto y te respondemos en menos de 24 horas con un
           presupuesto personalizado sin compromiso.
         </p>
 
         <div className="border border-linea p-7 mb-10">
-          <p className="font-serif text-white tracking-[0.06em] mb-4">
+          <p className="type-h3 text-white mb-4">
             ¿Prefieres respuesta inmediata?
           </p>
           <a
@@ -76,7 +76,7 @@ export default function ContactForm() {
             "Asesoría de diseño incluida",
             "Fabricación 100% a la medida",
           ].map((item) => (
-            <li key={item} className="flex items-center gap-4 text-sm text-crema/70">
+            <li key={item} className="flex items-center gap-4 type-small text-crema/70">
               <span className="w-4 h-px bg-oro shrink-0" />
               {item}
             </li>
@@ -142,12 +142,12 @@ export default function ContactForm() {
         </div>
 
         {status === "success" && (
-          <p role="status" className="border-l-2 border-oro pl-4 text-champagne text-sm">
+          <p role="status" className="border-l-2 border-oro pl-4 type-small text-champagne">
             Mensaje enviado. Te contactaremos pronto.
           </p>
         )}
         {status === "error" && (
-          <p role="alert" className="border-l-2 border-red-400/70 pl-4 text-red-300 text-sm">
+          <p role="alert" className="border-l-2 border-red-400/70 pl-4 type-small text-red-300">
             Error al enviar. Por favor escríbenos por WhatsApp.
           </p>
         )}

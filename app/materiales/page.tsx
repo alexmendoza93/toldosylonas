@@ -65,12 +65,12 @@ export default function MaterialesPage() {
                 delay={(i % 3) * 0.1}
                 className="group bg-carbon border border-linea p-10 transition-all duration-700 ease-lux hover:-translate-y-1 hover:border-oro/50"
               >
-                <span className="eyebrow text-[9px]! mb-5">{brand.country}</span>
-                <h2 className="font-serif text-2xl text-white tracking-[0.14em] mb-5 transition-colors group-hover:text-champagne">
+                <span className="block type-label text-oro mb-5">{brand.country}</span>
+                <h2 className="type-h3 text-white mb-5 transition-colors group-hover:text-champagne">
                   {brand.name.toUpperCase()}
                 </h2>
                 <span className="block w-8 h-px bg-oro/60 mb-5" />
-                <p className="text-crema/60 text-sm leading-relaxed">{brand.description}</p>
+                <p className="type-small text-crema/60">{brand.description}</p>
               </Reveal>
             ))}
           </div>
@@ -84,11 +84,11 @@ export default function MaterialesPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-14 text-center">
             {WHY.map((item, i) => (
               <Reveal key={item.label} delay={i * 0.1}>
-                <p className="font-serif text-4xl md:text-5xl text-champagne mb-4">{item.stat}</p>
-                <p className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mb-3">
+                <p className="type-stat text-champagne mb-4">{item.stat}</p>
+                <p className="type-label text-white mb-3">
                   {item.label}
                 </p>
-                <p className="text-crema/60 text-sm leading-relaxed">{item.desc}</p>
+                <p className="type-small text-crema/60">{item.desc}</p>
               </Reveal>
             ))}
           </div>

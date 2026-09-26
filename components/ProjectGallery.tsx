@@ -89,7 +89,7 @@ export default function ProjectGallery({ limit, showFilters = true }: Props) {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-5 py-2.5 text-[10px] tracking-[0.3em] uppercase border transition-colors duration-500 ${
+              className={`px-5 py-2.5 type-meta border transition-colors duration-500 ${
                 activeCategory === cat
                   ? "bg-oro text-noir border-oro"
                   : "text-crema/70 border-linea hover:border-oro hover:text-oro"
@@ -127,8 +127,8 @@ export default function ProjectGallery({ limit, showFilters = true }: Props) {
 
             <div className="absolute inset-x-0 bottom-0 p-6 flex items-end justify-between gap-4">
               <div>
-                <span className="eyebrow text-[9px]! mb-2">{img.category}</span>
-                <p className="text-crema text-sm leading-snug max-w-[26ch] translate-y-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <span className="block type-label text-oro mb-2">{img.category}</span>
+                <p className="type-small text-crema max-w-[26ch] translate-y-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                   {img.alt}
                 </p>
               </div>

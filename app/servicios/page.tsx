@@ -110,11 +110,11 @@ export default function ServiciosPage() {
           <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             {PROCESS.map((item, i) => (
               <Reveal as="li" key={item.step} delay={i * 0.1} className="border-t border-oro/40 pt-8">
-                <span className="block font-serif text-5xl text-oro/35 mb-6">{item.step}</span>
-                <h3 className="text-[11px] font-medium tracking-[0.3em] uppercase text-white mb-3">
+                <span className="block type-stat text-oro/35 mb-6">{item.step}</span>
+                <h3 className="type-label text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-crema/60 text-sm leading-relaxed">{item.desc}</p>
+                <p className="type-small text-crema/60">{item.desc}</p>
               </Reveal>
             ))}
           </ol>

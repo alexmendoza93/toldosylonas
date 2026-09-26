@@ -14,10 +14,10 @@ export default function TrustBar() {
                 i % 2 === 1 ? "border-l" : ""
               } ${i >= 2 ? "border-t lg:border-t-0" : ""} ${i === 2 ? "lg:border-l" : ""}`}
             >
-              <p className="font-serif text-4xl md:text-5xl text-champagne mb-3 tracking-[0.04em]">
+              <p className="type-stat text-champagne mb-3">
                 {stat.value}
               </p>
-              <p className="text-crema/55 text-[10px] tracking-[0.3em] uppercase">
+              <p className="type-label text-crema/55">
                 {stat.label}
               </p>
             </Reveal>

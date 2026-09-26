@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-5 flex flex-col items-center lg:items-start">
             <Logo variant="full" className="lg:items-start lg:text-left" />
-            <p className="text-crema/55 text-sm leading-relaxed max-w-sm mt-8 text-center lg:text-left">
+            <p className="type-small text-crema/55 max-w-sm mt-8 text-center lg:text-left">
               No instalamos toldos, diseñamos experiencias. Arquitectura exterior
               a la medida desde {FOUNDING_YEAR}.
             </p>
@@ -61,13 +61,13 @@ export default function Footer() {
 
           {/* Navigation */}
           <div className="lg:col-span-3 text-center lg:text-left">
-            <h3 className="eyebrow mb-7">Navegación</h3>
+            <h3 className="type-label text-oro mb-7">Navegación</h3>
             <ul className="flex flex-col gap-3.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-crema/60 text-sm tracking-wide hover:text-champagne transition-colors"
+                    className="type-small text-crema/60 hover:text-champagne transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -78,8 +78,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-4 text-center lg:text-left">
-            <h3 className="eyebrow mb-7">Contacto</h3>
-            <ul className="flex flex-col gap-3.5 text-sm">
+            <h3 className="type-label text-oro mb-7">Contacto</h3>
+            <ul className="flex flex-col gap-3.5 type-small">
               {CONTACT.phone && (
                 <li>
                   <a href={`tel:${CONTACT.phone}`} className="text-crema/60 hover:text-champagne transition-colors">
@@ -106,10 +106,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-20 pt-8 border-t border-linea flex flex-col md:flex-row items-center justify-between gap-4 text-center">
-          <p className="text-crema/35 text-[11px] tracking-wide">
+          <p className="type-meta text-crema/35">
             © {currentYear} {COMPANY_NAME}. Todos los derechos reservados.
           </p>
-          <p className="text-oro/70 text-[10px] tracking-[0.4em] uppercase">
+          <p className="type-meta text-oro/70">
             Diseño · Calidad · Exclusividad
           </p>
         </div>

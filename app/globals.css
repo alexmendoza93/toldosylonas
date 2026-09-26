@@ -67,7 +67,7 @@ body {
   background: transparent;
   color: var(--color-champagne);
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -96,7 +96,7 @@ body {
   background: var(--color-oro);
   color: var(--color-noir);
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -109,13 +109,126 @@ body {
   }
 }
 
+/* ── Type scale ────────────────────────────────────────────────────────
+   One class per role; components set only color and spacing on top.
+   display > h2 > stat > statement > h3 · lead > body > small · eyebrow > label > meta */
+
+@utility type-display {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  line-height: 1.12;
+  letter-spacing: 0.04em;
+  text-wrap: balance;
+  @media (width >= 40rem) {
+    font-size: 3rem;
+  }
+  @media (width >= 48rem) {
+    font-size: 3.75rem;
+  }
+}
+
+@utility type-h2 {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-wrap: balance;
+  @media (width >= 48rem) {
+    font-size: 2.75rem;
+  }
+}
+
+@utility type-stat {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  @media (width >= 48rem) {
+    font-size: 3rem;
+  }
+}
+
+@utility type-statement {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 1.375;
+  letter-spacing: 0.04em;
+  text-wrap: balance;
+  @media (width >= 48rem) {
+    font-size: 1.875rem;
+  }
+}
+
+@utility type-h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-wrap: balance;
+}
+
+@utility type-lead {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.625;
+  @media (width >= 40rem) {
+    font-size: 1.125rem;
+  }
+}
+
+@utility type-body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.625;
+}
+
+@utility type-small {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.625;
+}
+
 @utility eyebrow {
   display: block;
   color: var(--color-oro);
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  letter-spacing: 0.42em;
+  line-height: 1.4;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  @media (width >= 48rem) {
+    font-size: 0.9375rem;
+  }
+}
+
+@utility type-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Text links that sit beside a button share the button's type */
+@utility type-action {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+@utility type-meta {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.3em;
   text-transform: uppercase;
 }
 

@@ -66,9 +66,9 @@ export default function BlogPage() {
                 className="group py-12 border-b border-linea"
               >
                 <div className="flex items-center gap-5 mb-5">
-                  <span className="eyebrow text-[9px]!">{post.category}</span>
+                  <span className="type-label text-oro">{post.category}</span>
                   <span className="w-6 h-px bg-linea" />
-                  <time dateTime={post.date} className="text-[11px] tracking-wide text-crema/40">
+                  <time dateTime={post.date} className="type-meta text-crema/40">
                     {new Date(post.date).toLocaleDateString("es-MX", {
                       year: "numeric",
                       month: "long",
@@ -76,11 +76,11 @@ export default function BlogPage() {
                     })}
                   </time>
                 </div>
-                <h2 className="font-serif text-xl md:text-2xl text-white tracking-[0.04em] leading-snug mb-4 transition-colors group-hover:text-champagne">
+                <h2 className="type-h3 text-white mb-4 transition-colors group-hover:text-champagne">
                   {post.title}
                 </h2>
-                <p className="text-crema/60 text-sm leading-relaxed mb-6 max-w-2xl">{post.excerpt}</p>
-                <span className="text-[10px] tracking-[0.3em] uppercase text-oro/70">Próximamente</span>
+                <p className="type-small text-crema/60 mb-6 max-w-2xl">{post.excerpt}</p>
+                <span className="type-meta text-oro/70">Próximamente</span>
               </Reveal>
             ))}
           </div>

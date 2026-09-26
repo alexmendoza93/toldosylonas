@@ -77,10 +77,10 @@ export default function HomePage() {
                 }`}
               >
                 <Icon className="w-12 h-12 text-oro mb-7" />
-                <h3 className="text-[12px] font-medium tracking-[0.34em] uppercase text-champagne mb-4">
+                <h3 className="type-label text-champagne mb-4">
                   {title}
                 </h3>
-                <p className="text-crema/60 text-sm leading-relaxed max-w-[24ch]">{desc}</p>
+                <p className="type-small text-crema/60 max-w-[24ch]">{desc}</p>
               </Reveal>
             ))}
           </div>
@@ -136,21 +136,21 @@ export default function HomePage() {
           <div className="flex items-center px-6 sm:px-12 lg:px-20 py-24">
             <Reveal className="max-w-xl">
               <span className="eyebrow mb-8">Mensaje de marca</span>
-              <p className="font-serif text-2xl md:text-3xl leading-snug text-crema tracking-[0.04em]">
+              <p className="type-statement text-crema">
                 Creamos espacios exteriores que reflejan{" "}
                 <span className="text-champagne">tu estilo de vida.</span>
               </p>
               <span className="divider-oro my-12" />
               <h2
                 id="manifesto-heading"
-                className="text-[12px] font-medium tracking-[0.42em] uppercase text-white mb-3"
+                className="type-label text-white mb-3"
               >
                 No instalamos toldos.
               </h2>
               <p className="font-script text-5xl md:text-6xl text-oro leading-tight">
                 Diseñamos experiencias.
               </p>
-              <p className="text-crema/60 text-[15px] leading-relaxed mt-10">
+              <p className="type-body text-crema/60 mt-10">
                 Desde 2009 fabricamos en Guadalajara cada pieza como un elemento de
                 arquitectura: telas Sunbrella y Sattler, estructuras de aluminio y
                 automatización Somfy, integradas al carácter de tu espacio.
@@ -198,12 +198,12 @@ export default function HomePage() {
           <span className="eyebrow mb-6">Arquitectura Exterior</span>
           <h2
             id="cta-heading"
-            className="font-serif text-3xl md:text-5xl leading-tight text-white tracking-[0.04em]"
+            className="type-h2 text-white"
           >
             ¿Listo para transformar tu espacio?
           </h2>
           <span className="divider-oro mx-auto my-10" />
-          <p className="text-crema/70 text-[15px] leading-relaxed mb-12 max-w-xl mx-auto">
+          <p className="type-body text-crema/70 mb-12 max-w-xl mx-auto">
             Cuéntanos sobre tu proyecto y en menos de 24 horas te enviamos una
             propuesta de diseño y presupuesto detallado. Sin compromiso.
           </p>

@@ -20,10 +20,10 @@ export default function BrandsBar() {
               delay={i * 0.06}
               className="group flex flex-col items-center justify-center py-12 px-4 border-r border-b border-linea text-center transition-colors duration-500 hover:bg-carbon"
             >
-              <p className="font-serif text-lg tracking-[0.16em] text-crema/55 transition-colors duration-500 group-hover:text-champagne">
+              <p className="type-h3 text-crema/55 transition-colors duration-500 group-hover:text-champagne">
                 {brand.name.toUpperCase()}
               </p>
-              <p className="text-crema/30 text-[9px] tracking-[0.3em] uppercase mt-2">
+              <p className="type-meta text-crema/30 mt-2">
                 {brand.country}
               </p>
             </Reveal>

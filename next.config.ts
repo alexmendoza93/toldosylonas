@@ -7,6 +7,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(__dirname),
   },
+  experimental: {
+    // The persisted dev cache (.next/dev/cache) grew past 1 GB across sessions
+    // and pushed `next dev` into a heap OOM. Start each dev session fresh.
+    turbopackFileSystemCacheForDev: false,
+  },
   async redirects() {
     return [
       // Preserve SEO for pages that move to new URL structure

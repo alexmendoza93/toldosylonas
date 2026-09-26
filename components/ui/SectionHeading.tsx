@@ -25,13 +25,13 @@ export default function SectionHeading({
       {eyebrow && <span className="eyebrow mb-5">{eyebrow}</span>}
       <h2
         id={id}
-        className="font-serif text-3xl md:text-[2.75rem] leading-[1.15] text-white tracking-[0.04em]"
+        className="type-h2 text-white"
       >
         {title}
       </h2>
       <span className={`divider-oro mt-7 ${centered ? "mx-auto" : ""}`} />
       {subtitle && (
-        <p className="text-crema/65 text-[15px] leading-relaxed mt-7 max-w-xl mx-auto">
+        <p className="type-body text-crema/65 mt-7 max-w-xl mx-auto">
           {subtitle}
         </p>
       )}

@@ -60,17 +60,17 @@ export default function ContactenosPage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
             {channels.map((c) => (
               <div key={c.label}>
-                <h3 className="eyebrow mb-4">{c.label}</h3>
+                <h3 className="type-label text-oro mb-4">{c.label}</h3>
                 {c.href ? (
                   <a
                     href={c.href}
                     {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="text-crema/70 text-sm hover:text-champagne transition-colors break-words"
+                    className="type-small text-crema/70 hover:text-champagne transition-colors break-words"
                   >
                     {c.value}
                   </a>
                 ) : (
-                  <p className="text-crema/70 text-sm">{c.value}</p>
+                  <p className="type-small text-crema/70">{c.value}</p>
                 )}
               </div>
             ))}

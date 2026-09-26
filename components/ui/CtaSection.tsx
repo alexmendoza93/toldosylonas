@@ -22,11 +22,11 @@ export default function CtaSection({
     <section className="relative py-28 md:py-36 bg-grafito texture-lino border-t border-linea">
       <Reveal className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <span className="eyebrow mb-6">{eyebrow}</span>
-        <h2 className="font-serif text-3xl md:text-4xl leading-tight text-white tracking-[0.04em]">
+        <h2 className="type-h2 text-white">
           {title}
         </h2>
         <span className="divider-oro mx-auto my-8" />
-        <p className="text-crema/65 text-[15px] leading-relaxed mb-12 max-w-xl mx-auto">
+        <p className="type-body text-crema/65 mb-12 max-w-xl mx-auto">
           {text}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
