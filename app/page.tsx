@@ -58,7 +58,10 @@ export default function HomePage() {
       <TrustBar />
 
       {/* Brand pillars */}
-      <section className="bg-noir py-28 md:py-40" aria-labelledby="pillars-heading">
+      <section
+        className="bg-noir py-28 md:py-40"
+        aria-labelledby="pillars-heading"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             id="pillars-heading"
@@ -77,12 +80,53 @@ export default function HomePage() {
                 }`}
               >
                 <Icon className="w-12 h-12 text-oro mb-7" />
-                <h3 className="type-label text-champagne mb-4">
-                  {title}
-                </h3>
+                <h3 className="type-label text-champagne mb-4">{title}</h3>
                 <p className="type-small text-crema/60 max-w-[24ch]">{desc}</p>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Manifesto */}
+      <section
+        className="relative bg-noir overflow-hidden"
+        aria-labelledby="manifesto-heading"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
+          <div className="relative min-h-[50vh] lg:min-h-full">
+            <Image
+              src={IMAGES.manifesto}
+              alt="Terraza con pérgolas y cortinas al atardecer frente al mar"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-noir/25" />
+            <div className="absolute inset-0 bg-linear-to-t lg:bg-linear-to-r from-transparent via-transparent to-noir" />
+          </div>
+
+          <div className="flex items-center px-6 sm:px-12 lg:px-20 py-24">
+            <Reveal className="max-w-xl">
+              <span className="eyebrow mb-8">Mensaje de marca</span>
+              <p className="type-statement text-crema">
+                Creamos espacios exteriores que reflejan{" "}
+                <span className="text-champagne">tu estilo de vida.</span>
+              </p>
+              <span className="divider-oro my-12" />
+              <h2 id="manifesto-heading" className="type-label text-white mb-3">
+                No instalamos toldos.
+              </h2>
+              <p className="font-script text-5xl md:text-6xl text-oro leading-tight">
+                Diseñamos experiencias.
+              </p>
+              <p className="type-body text-crema/60 mt-10">
+                Desde 2009 fabricamos en Guadalajara cada pieza como un elemento
+                de arquitectura: telas Sunbrella y Sattler, estructuras de
+                aluminio y automatización Somfy, integradas al carácter de tu
+                espacio.
+              </p>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -118,74 +162,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Manifesto */}
-      <section className="relative bg-noir overflow-hidden" aria-labelledby="manifesto-heading">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
-          <div className="relative min-h-[50vh] lg:min-h-full">
-            <Image
-              src={IMAGES.manifesto}
-              alt="Terraza con pérgolas y cortinas al atardecer frente al mar"
-              fill
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-noir/25" />
-            <div className="absolute inset-0 bg-linear-to-t lg:bg-linear-to-r from-transparent via-transparent to-noir" />
-          </div>
-
-          <div className="flex items-center px-6 sm:px-12 lg:px-20 py-24">
-            <Reveal className="max-w-xl">
-              <span className="eyebrow mb-8">Mensaje de marca</span>
-              <p className="type-statement text-crema">
-                Creamos espacios exteriores que reflejan{" "}
-                <span className="text-champagne">tu estilo de vida.</span>
-              </p>
-              <span className="divider-oro my-12" />
-              <h2
-                id="manifesto-heading"
-                className="type-label text-white mb-3"
-              >
-                No instalamos toldos.
-              </h2>
-              <p className="font-script text-5xl md:text-6xl text-oro leading-tight">
-                Diseñamos experiencias.
-              </p>
-              <p className="type-body text-crema/60 mt-10">
-                Desde 2009 fabricamos en Guadalajara cada pieza como un elemento de
-                arquitectura: telas Sunbrella y Sattler, estructuras de aluminio y
-                automatización Somfy, integradas al carácter de tu espacio.
-              </p>
-              <Link href="/nosotros" className="btn-oro mt-12">
-                Conoce el estudio
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* Projects */}
-      <section className="bg-noir py-28 md:py-40 border-t border-linea" aria-labelledby="projects-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            id="projects-heading"
-            eyebrow="Portafolio"
-            title="Proyectos que inspiran"
-            subtitle="Cada instalación es única. Descubre cómo transformamos espacios exteriores en toda Guadalajara."
-          />
-          <ProjectGallery limit={6} showFilters={false} />
-          <Reveal className="text-center mt-16">
-            <Link href="/galeria" className="btn-oro">
-              Ver galería completa
-              <ArrowIcon />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
       <BrandsBar />
 
       {/* Final CTA */}
-      <section className="relative py-36 md:py-48 overflow-hidden" aria-labelledby="cta-heading">
+      <section
+        className="relative py-36 md:py-48 overflow-hidden"
+        aria-labelledby="cta-heading"
+      >
         <Image
           src={IMAGES.cta}
           alt=""
@@ -196,10 +180,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-noir/80" />
         <Reveal className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="eyebrow mb-6">Arquitectura Exterior</span>
-          <h2
-            id="cta-heading"
-            className="type-h2 text-white"
-          >
+          <h2 id="cta-heading" className="type-h2 text-white">
             ¿Listo para transformar tu espacio?
           </h2>
           <span className="divider-oro mx-auto my-10" />
@@ -208,12 +189,14 @@ export default function HomePage() {
             propuesta de diseño y presupuesto detallado. Sin compromiso.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-oro-solid">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-oro-solid"
+            >
               Cotizar por WhatsApp
             </a>
-            <Link href="/contactenos" className="btn-oro">
-              Enviar formulario
-            </Link>
           </div>
         </Reveal>
       </section>

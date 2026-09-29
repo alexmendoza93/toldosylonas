@@ -132,7 +132,6 @@ export default function NosotrosPage() {
       <CtaSection
         title="¿Tienes un proyecto en mente?"
         text="Platícanos tu idea y juntos diseñamos la solución perfecta para tu espacio."
-        secondary={{ label: "Enviar formulario", href: "/contactenos" }}
       />
     </>
   );

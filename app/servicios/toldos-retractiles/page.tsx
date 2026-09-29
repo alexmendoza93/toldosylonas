@@ -110,7 +110,6 @@ export default function ToldosRetractilesPage() {
       <CtaSection
         title="Solicita tu cotización de toldo retráctil"
         text="Te visitamos, medimos y te entregamos presupuesto sin costo ni compromiso."
-        secondary={{ label: "Enviar formulario", href: "/contactenos" }}
       />
     </>
   );

@@ -113,6 +113,27 @@ export const MaintenanceIcon = (p: IconProps) => (
   </Base>
 );
 
+export const InstagramIcon = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="8" y="8" width="32" height="32" rx="9" />
+    <circle cx="24" cy="24" r="7.5" />
+    <circle cx="33.5" cy="14.5" r="1.25" />
+  </Base>
+);
+
+export const FacebookIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M35 5h-5.5A9.5 9.5 0 0 0 20 14.5V20h-6v7.5h6V43h7.5V27.5H33l1.5-7.5h-7v-4.5a2.5 2.5 0 0 1 2.5-2.5H35z" />
+  </Base>
+);
+
+export const MailIcon = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="6" y="11" width="36" height="26" rx="1.5" />
+    <path d="m6 13 18 13 18-13" />
+  </Base>
+);
+
 export const ArrowIcon = ({ className = "w-4 h-4" }: IconProps) => (
   <svg
     viewBox="0 0 24 24"

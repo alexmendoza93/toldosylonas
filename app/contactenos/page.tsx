@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/ContactForm";
 import PageHero from "@/components/ui/PageHero";
-import { SITE_URL, CONTACT, SOCIAL } from "@/lib/constants";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Contacto — Cotización de Toldos en Guadalajara",
   description:
-    "Solicita tu cotización de toldos en Guadalajara. Sin costo, sin compromiso. Respondemos en menos de 24 horas. WhatsApp, correo o formulario.",
+    "Solicita tu cotización de toldos en Guadalajara. Sin costo, sin compromiso. Respondemos en menos de 24 horas. WhatsApp o correo.",
   keywords: [
     "cotizar toldos Guadalajara",
     "presupuesto toldo Guadalajara",
@@ -24,12 +24,6 @@ const contactSchema = {
 };
 
 export default function ContactenosPage() {
-  const channels = [
-    { label: "Instagram", value: "@toldosylonasguadalajara", href: SOCIAL.instagram, external: true },
-    { label: "Correo", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
-    { label: "Ubicación", value: CONTACT.address },
-  ];
-
   return (
     <>
       <script
@@ -50,31 +44,45 @@ export default function ContactenosPage() {
       />
 
       <section className="py-24 md:py-32 bg-noir">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ContactForm />
-        </div>
-      </section>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span className="eyebrow mb-5">Contacto</span>
+          <h2 className="type-h2 text-white">
+            Diseñemos tu espacio
+          </h2>
+          <span className="divider-oro mx-auto mt-7 mb-8" />
+          <p className="type-body text-crema/65 mb-10 max-w-xl mx-auto">
+            Cuéntanos tu proyecto y te respondemos en menos de 24 horas con un
+            presupuesto personalizado sin compromiso.
+          </p>
 
-      <section className="py-16 bg-grafito border-t border-linea">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 text-center">
-            {channels.map((c) => (
-              <div key={c.label}>
-                <h3 className="type-label text-oro mb-4">{c.label}</h3>
-                {c.href ? (
-                  <a
-                    href={c.href}
-                    {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="type-small text-crema/70 hover:text-champagne transition-colors break-words"
-                  >
-                    {c.value}
-                  </a>
-                ) : (
-                  <p className="type-small text-crema/70">{c.value}</p>
-                )}
-              </div>
-            ))}
+          <div className="border border-linea p-7 mb-10">
+            <p className="type-h3 text-white mb-4">
+              ¿Prefieres respuesta inmediata?
+            </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-oro"
+            >
+              <WhatsAppIcon />
+              Escríbenos por WhatsApp
+            </a>
           </div>
+
+          <ul className="inline-flex flex-col gap-4 text-left">
+            {[
+              "Respuesta en menos de 24 horas",
+              "Cotización sin compromiso",
+              "Asesoría de diseño incluida",
+              "Fabricación 100% a la medida",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-4 type-small text-crema/70">
+                <span className="w-4 h-px bg-oro shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </>

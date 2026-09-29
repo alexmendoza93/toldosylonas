@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Reveal from "./Reveal";
 import { WHATSAPP_URL } from "@/lib/constants";
 
@@ -7,7 +6,6 @@ interface Props {
   title: React.ReactNode;
   text: string;
   primaryLabel?: string;
-  secondary?: { label: string; href: string };
 }
 
 // Closing call-to-action shared by the inner pages.
@@ -16,7 +14,6 @@ export default function CtaSection({
   title,
   text,
   primaryLabel = "Cotizar por WhatsApp",
-  secondary,
 }: Props) {
   return (
     <section className="relative py-28 md:py-36 bg-grafito texture-lino border-t border-linea">
@@ -33,11 +30,6 @@ export default function CtaSection({
           <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-oro-solid">
             {primaryLabel}
           </a>
-          {secondary && (
-            <Link href={secondary.href} className="btn-oro">
-              {secondary.label}
-            </Link>
-          )}
         </div>
       </Reveal>
     </section>
