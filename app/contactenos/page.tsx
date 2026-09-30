@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
+import BusinessHours from "@/components/BusinessHours";
 import { SITE_URL, WHATSAPP_URL } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
@@ -69,6 +70,8 @@ export default function ContactenosPage() {
               Escríbenos por WhatsApp
             </a>
           </div>
+
+          <BusinessHours className="mb-10" />
 
           <ul className="inline-flex flex-col gap-4 text-left">
             {[

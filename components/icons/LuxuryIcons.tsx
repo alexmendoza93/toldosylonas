@@ -134,7 +134,17 @@ export const MailIcon = (p: IconProps) => (
   </Base>
 );
 
-export const ArrowIcon = ({ className = "w-4 h-4" }: IconProps) => (
+export const ClockIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="24" cy="24" r="18" />
+    <circle cx="24" cy="24" r="14.5" strokeOpacity={0.45} />
+    <path d="M24 9.5v2.5M38.5 24H36M24 38.5V36M9.5 24H12" />
+    <path d="M24 15v9l6 4" />
+    <circle cx="24" cy="24" r="1.25" />
+  </Base>
+);
+
+export const ArrowIcon =({ className = "w-4 h-4" }: IconProps) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"

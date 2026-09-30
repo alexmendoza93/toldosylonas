@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
 import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 
@@ -49,12 +50,12 @@ const SPECS = [
 
 // Temporary photos (lib/images.ts) — replace with real installation photos
 const GALLERY = galleryFor("lonas-industriales", [
-  { caption: "Cubierta · Bodega", alt: "Cubierta de lona industrial para bodega" },
-  { caption: "Membrana · Nave", alt: "Membrana tensada sobre nave industrial" },
-  { caption: "Faldón · Andén de carga", alt: "Cubierta para andén de carga" },
-  { caption: "Cortina divisoria · Planta", alt: "Cortina industrial divisoria en planta" },
-  { caption: "Gran claro · Patio de maniobras", alt: "Cubierta de gran claro en patio de maniobras" },
-  { caption: "Cubierta · Almacén", alt: "Lona tensada en almacén de la zona metropolitana" },
+  "Cubierta de lona industrial para bodega",
+  "Membrana tensada sobre nave industrial",
+  "Cubierta para andén de carga",
+  "Cortina industrial divisoria en planta",
+  "Cubierta de gran claro en patio de maniobras",
+  "Lona tensada en almacén de la zona metropolitana",
 ]);
 
 export default function LonasIndustrialesPage() {
@@ -123,10 +124,13 @@ export default function LonasIndustrialesPage() {
 
       <ProductGallery
         id="gallery-heading"
-        title="Proyectos industriales"
+        title="Lonas industriales en obra"
         subtitle="Cubiertas y lonas para empresas de Guadalajara, El Salto y la zona metropolitana."
         images={GALLERY}
       />
+
+      <RelatedProducts productId="lonas-industriales" />
+
 
       <CtaSection
         title="Cotiza tu proyecto industrial"

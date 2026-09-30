@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "@/components/brand/Logo";
+import BusinessHours from "@/components/BusinessHours";
 import {
   COMPANY_NAME,
   FOUNDING_YEAR,
@@ -94,6 +95,7 @@ export default function Footer() {
               </li>
               <li className="text-crema/60">{CONTACT.address}</li>
             </ul>
+            <BusinessHours variant="compact" className="mt-9 max-w-xs mx-auto lg:mx-0" />
             <a
               href={WHATSAPP_URL}
               target="_blank"

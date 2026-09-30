@@ -8,6 +8,7 @@ import {
   SITE_URL,
   COMPANY_NAME,
   SEO_KEYWORDS,
+  BUSINESS_HOURS,
 } from "@/lib/constants";
 
 const cinzel = Cinzel({
@@ -100,6 +101,14 @@ const structuredData = {
     addressRegion: "Jalisco",
     addressCountry: "MX",
   },
+  openingHoursSpecification: BUSINESS_HOURS.flatMap(({ dayOfWeek, slots }) =>
+    slots.map(([opens, closes]) => ({
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek,
+      opens,
+      closes,
+    })),
+  ),
   areaServed: [
     { "@type": "City", name: "Guadalajara" },
     { "@type": "City", name: "Zapopan" },

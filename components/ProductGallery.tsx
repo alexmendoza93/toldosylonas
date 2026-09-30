@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -11,8 +10,6 @@ import SectionHeading from "@/components/ui/SectionHeading";
 export interface ProductGalleryImage {
   src: string;
   alt: string;
-  // Short label shown over the photo, e.g. "Screen 5% · Oficina"
-  caption: string;
   width: number;
   height: number;
 }
@@ -39,7 +36,7 @@ const MOSAIC = [
 // Photo gallery for a single product page, placed before the closing CTA.
 export default function ProductGallery({
   images,
-  eyebrow = "Proyectos realizados",
+  eyebrow = "Galería",
   title,
   subtitle,
   id = "product-gallery-heading",
@@ -66,7 +63,7 @@ export default function ProductGallery({
                 <button
                   type="button"
                   onClick={() => setLightboxIndex(i)}
-                  className={`group relative block w-full h-full aspect-4/3 ${wide ? "sm:aspect-video" : ""} lg:aspect-auto overflow-hidden bg-carbon text-left`}
+                  className={`group relative block w-full h-full aspect-4/3 ${wide ? "sm:aspect-video" : ""} lg:aspect-auto overflow-hidden bg-carbon cursor-zoom-in`}
                   aria-label={`Ver foto: ${img.alt}`}
                 >
                   <Image
@@ -76,34 +73,13 @@ export default function ProductGallery({
                     sizes={cell.sizes}
                     className="object-cover grayscale brightness-75 transition-all duration-1000 ease-lux group-hover:grayscale-0 group-hover:brightness-90 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-noir/85 via-noir/5 to-transparent" />
                   {/* Hairline gold frame that settles in on hover */}
                   <span className="pointer-events-none absolute inset-4 border border-oro/0 transition-all duration-700 ease-lux group-hover:inset-3 group-hover:border-oro/40" />
-
-                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex items-end justify-between gap-4">
-                    <div>
-                      <span className="block type-meta text-oro mb-2">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <p className="type-label text-crema">{img.caption}</p>
-                    </div>
-                    <span className="w-10 h-10 shrink-0 border border-oro/60 text-oro flex items-center justify-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.25} viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 5v14M5 12h14" />
-                      </svg>
-                    </span>
-                  </div>
                 </button>
               </Reveal>
             );
           })}
         </div>
-
-        <Reveal className="mt-14 text-center">
-          <Link href="/galeria" className="btn-oro">
-            Ver todos los proyectos
-          </Link>
-        </Reveal>
       </div>
 
       <Lightbox

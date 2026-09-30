@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
 import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 import { CrownIcon, SpecialIcon, ComfortIcon } from "@/components/icons/LuxuryIcons";
@@ -53,12 +54,12 @@ const WHY = [
 
 // Temporary photos (lib/images.ts) — replace with real installation photos
 const GALLERY = galleryFor("proyectos-especiales", [
-  { caption: "Velaria · Jardín", alt: "Velaria de sombra en jardín con palmeras" },
-  { caption: "Vela de sombra · Club", alt: "Velas de sombra sobre área de camastros" },
-  { caption: "Membrana · Área social", alt: "Membrana tensada en área social de hotel" },
-  { caption: "Pérgola · Alberca", alt: "Pérgola con tela junto a alberca residencial" },
-  { caption: "Cubierta · Evento", alt: "Cubierta textil para evento en terraza" },
-  { caption: "Vela de sombra · Terraza", alt: "Vela de sombra geométrica sobre terraza" },
+  "Velaria de sombra en jardín con palmeras",
+  "Velas de sombra sobre área de camastros",
+  "Membrana tensada en área social de hotel",
+  "Pérgola con tela junto a alberca residencial",
+  "Cubierta textil para evento en terraza",
+  "Vela de sombra geométrica sobre terraza",
 ]);
 
 export default function ProyectosEspecialesPage() {
@@ -121,10 +122,13 @@ export default function ProyectosEspecialesPage() {
 
       <ProductGallery
         id="gallery-heading"
-        title="Proyectos fuera de catálogo"
+        title="Arquitectura textil en imágenes"
         subtitle="Arquitectura textil diseñada para hoteles, residencias, plazas y eventos."
         images={GALLERY}
       />
+
+      <RelatedProducts productId="proyectos-especiales" />
+
 
       <CtaSection
         title="Cuéntanos tu proyecto especial"

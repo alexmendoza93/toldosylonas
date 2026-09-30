@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
 import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 
@@ -49,12 +50,12 @@ const BENEFITS = [
 
 // Temporary photos (lib/images.ts) — replace with real before/after photos
 const GALLERY = galleryFor("mantenimiento", [
-  { caption: "Cambio de lona · Terraza", alt: "Toldo con lona nueva en terraza residencial" },
-  { caption: "Ajuste · Toldo retráctil", alt: "Toldo retráctil después de ajuste de brazos" },
-  { caption: "Limpieza · Palillería", alt: "Palillería después de limpieza de tela" },
-  { caption: "Motor Somfy · Deck", alt: "Toldo motorizado con motor Somfy reparado" },
-  { caption: "Cambio de lona · Fachada", alt: "Toldo de fachada con tela renovada" },
-  { caption: "Revisión · Hotel", alt: "Mantenimiento preventivo de toldos en hotel" },
+  "Toldo con lona nueva en terraza residencial",
+  "Toldo retráctil después de ajuste de brazos",
+  "Palillería después de limpieza de tela",
+  "Toldo motorizado con motor Somfy reparado",
+  "Toldo de fachada con tela renovada",
+  "Mantenimiento preventivo de toldos en hotel",
 ]);
 
 export default function MantenimientoPage() {
@@ -123,11 +124,13 @@ export default function MantenimientoPage() {
 
       <ProductGallery
         id="gallery-heading"
-        eyebrow="Trabajos realizados"
         title="Toldos que recuperaron su forma"
         subtitle="Mantenimientos, reparaciones y cambios de lona en Guadalajara y zona metropolitana."
         images={GALLERY}
       />
+
+      <RelatedProducts productId="mantenimiento" />
+
 
       <CtaSection
         title="Agenda el mantenimiento de tu toldo"

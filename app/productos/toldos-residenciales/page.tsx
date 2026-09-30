@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
 import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 import { ShieldIcon, DiamondIcon, ResidentialIcon } from "@/components/icons/LuxuryIcons";
@@ -49,12 +50,12 @@ const WHY = [
 
 // Temporary photos (lib/images.ts) — replace with real installation photos
 const GALLERY = galleryFor("toldos-residenciales", [
-  { caption: "Palillería · Terraza", alt: "Palillería Siplan cubriendo terraza con alberca" },
-  { caption: "Toldo fijo · Acceso", alt: "Toldo fijo de aluminio en acceso de residencia" },
-  { caption: "Cortinas · Deck", alt: "Cortinas para terraza sobre deck de madera" },
-  { caption: "Toldo de fachada · Balcón", alt: "Toldo de fachada en balcón residencial" },
-  { caption: "Palillería · Jardín", alt: "Palillería sobre área de jardín en Zapopan" },
-  { caption: "Cortinas · Sala exterior", alt: "Cortinas enrollables en sala exterior de residencia" },
+  "Palillería Siplan cubriendo terraza con alberca",
+  "Toldo fijo de aluminio en acceso de residencia",
+  "Cortinas para terraza sobre deck de madera",
+  "Toldo de fachada en balcón residencial",
+  "Palillería sobre área de jardín en Zapopan",
+  "Cortinas enrollables en sala exterior de residencia",
 ]);
 
 export default function ToldosResidencialesPage() {
@@ -122,9 +123,12 @@ export default function ToldosResidencialesPage() {
       <ProductGallery
         id="gallery-heading"
         title="Hogares que ya disfrutan su exterior"
-        subtitle="Proyectos residenciales en Guadalajara, Zapopan y Tlajomulco."
+        subtitle="Toldos instalados en residencias de Guadalajara, Zapopan y Tlajomulco."
         images={GALLERY}
       />
+
+      <RelatedProducts productId="toldos-residenciales" />
+
 
       <CtaSection
         title="Solicita tu cotización de toldo residencial"

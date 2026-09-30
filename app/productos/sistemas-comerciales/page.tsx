@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
 import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 
@@ -53,12 +54,12 @@ const BENEFITS = [
 
 // Temporary photos (lib/images.ts) — replace with real installation photos
 const GALLERY = galleryFor("sistemas-comerciales", [
-  { caption: "Terraza · Restaurante", alt: "Terraza de restaurante techada en Guadalajara" },
-  { caption: "Cubierta · Hotel", alt: "Cubierta textil en área de alberca de hotel" },
-  { caption: "Sombra · Club de playa", alt: "Sombra para camastros en club de playa" },
-  { caption: "Cubierta · Jardín de eventos", alt: "Cubierta para jardín de eventos" },
-  { caption: "Palillería · Café", alt: "Palillería en terraza de café" },
-  { caption: "Cortinas · Terraza", alt: "Cortinas enrollables en terraza comercial" },
+  "Terraza de restaurante techada en Guadalajara",
+  "Cubierta textil en área de alberca de hotel",
+  "Sombra para camastros en club de playa",
+  "Cubierta para jardín de eventos",
+  "Palillería en terraza de café",
+  "Cortinas enrollables en terraza comercial",
 ]);
 
 export default function SistemasComercialesPage() {
@@ -127,6 +128,9 @@ export default function SistemasComercialesPage() {
         subtitle="Restaurantes, hoteles y espacios comerciales en la Zona Metropolitana de Guadalajara."
         images={GALLERY}
       />
+
+      <RelatedProducts productId="sistemas-comerciales" />
+
 
       <CtaSection
         title="Cotiza el sistema para tu negocio"

@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
 import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 import { ShieldIcon, ComfortIcon, RetractableIcon } from "@/components/icons/LuxuryIcons";
@@ -48,12 +49,12 @@ const WHY = [
 
 // Temporary photos (lib/images.ts) — replace with real installation photos
 const GALLERY = galleryFor("toldos-retractiles", [
-  { caption: "Brazos articulados · Terraza", alt: "Toldo retráctil de brazos articulados en terraza residencial" },
-  { caption: "Toldo cofre · Deck", alt: "Toldo cofre retráctil sobre deck de madera" },
-  { caption: "Pérgola bioclimática · Alberca", alt: "Pérgola bioclimática junto a alberca en Zapopan" },
-  { caption: "Motorizado Somfy · Sala exterior", alt: "Toldo retráctil motorizado con control Somfy en sala exterior" },
-  { caption: "Brazos articulados · Fachada", alt: "Toldo retráctil sobre fachada de residencia contemporánea" },
-  { caption: "Sistema Llaza · Hotel", alt: "Toldos retráctiles Llaza en terraza de hotel" },
+  "Toldo retráctil de brazos articulados en terraza residencial",
+  "Toldo cofre retráctil sobre deck de madera",
+  "Pérgola bioclimática junto a alberca en Zapopan",
+  "Toldo retráctil motorizado con control Somfy en sala exterior",
+  "Toldo retráctil sobre fachada de residencia contemporánea",
+  "Toldos retráctiles Llaza en terraza de hotel",
 ]);
 
 export default function ToldosRetractilesPage() {
@@ -124,6 +125,9 @@ export default function ToldosRetractilesPage() {
         subtitle="Sistemas manuales y motorizados en terrazas, fachadas y hoteles de la Zona Metropolitana de Guadalajara."
         images={GALLERY}
       />
+
+      <RelatedProducts productId="toldos-retractiles" />
+
 
       <CtaSection
         title="Solicita tu cotización de toldo retráctil"

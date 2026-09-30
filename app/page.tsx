@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import ProductCard from "@/components/ProductCard";
 import BrandsBar from "@/components/BrandsBar";
-import ProjectGallery from "@/components/ProjectGallery";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import {
@@ -108,7 +107,6 @@ export default function HomePage() {
 
           <div className="flex items-center px-6 sm:px-12 lg:px-20 py-24">
             <Reveal className="max-w-xl">
-              <span className="eyebrow mb-8">Mensaje de marca</span>
               <p className="type-statement text-crema">
                 Creamos espacios exteriores que reflejan{" "}
                 <span className="text-champagne">tu estilo de vida.</span>

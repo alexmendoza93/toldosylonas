@@ -4,6 +4,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
 import ProductGallery from "@/components/ProductGallery";
+import RelatedProducts from "@/components/RelatedProducts";
 import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 
@@ -57,12 +58,12 @@ const BENEFITS = [
 
 // Temporary photos (lib/images.ts) — replace with real installation photos
 const GALLERY = galleryFor("persianas-roller-screen", [
-  { caption: "Screen 5% · Recámara", alt: "Persiana Roller Screen en recámara con luz natural filtrada" },
-  { caption: "Sheer Elegance · Sala", alt: "Persiana Sheer Elegance en sala de estar" },
-  { caption: "Screen 3% · Estudio", alt: "Persiana Roller Screen en estudio residencial" },
-  { caption: "Sondblock · Suite", alt: "Persiana Sondblock en suite de hotel en Guadalajara" },
-  { caption: "Screen 10% · Ventanal", alt: "Persianas Roller Screen en ventanal de doble altura" },
-  { caption: "Motorizada · Residencia", alt: "Persianas motorizadas en residencia de Zapopan" },
+  "Persiana Roller Screen en recámara con luz natural filtrada",
+  "Persiana Sheer Elegance en sala de estar",
+  "Persiana Roller Screen en estudio residencial",
+  "Persiana Sondblock en suite de hotel en Guadalajara",
+  "Persianas Roller Screen en ventanal de doble altura",
+  "Persianas motorizadas en residencia de Zapopan",
 ]);
 
 export default function PersianasRollerScreenPage() {
@@ -134,6 +135,9 @@ export default function PersianasRollerScreenPage() {
         subtitle="Instalaciones a la medida en residencias, oficinas y hoteles de Guadalajara."
         images={GALLERY}
       />
+
+      <RelatedProducts productId="persianas-roller-screen" />
+
 
       <CtaSection
         title="Solicita tu cotización de Roller Screen"

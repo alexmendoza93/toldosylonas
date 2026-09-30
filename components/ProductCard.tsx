@@ -29,7 +29,9 @@ export default function ProductCard({
       className="group relative flex flex-col h-full bg-carbon border border-linea overflow-hidden transition-all duration-700 ease-lux hover:-translate-y-2 hover:border-oro/50 hover:shadow-[0_30px_60px_-30px_rgb(179_139_77/0.35)]"
     >
       {/* Image */}
-      <div className="relative aspect-4/3 overflow-hidden bg-grafito">
+      {/* transform-gpu keeps the clip of the scaling photo on one layer, so its
+          edge doesn't shift between frames while the card lifts */}
+      <div className="relative aspect-4/3 overflow-hidden bg-grafito transform-gpu">
         {image && (
           <Image
             src={image}
@@ -56,7 +58,9 @@ export default function ProductCard({
       </div>
 
       {/* Text */}
-      <div className="relative flex flex-col flex-1 px-7 pb-8 pt-2">
+      {/* Overlaps the photo by 1px: the photo's height is fractional, and without
+          this a row of it peeks through as a flickering line on hover */}
+      <div className="relative flex flex-col flex-1 -mt-px bg-carbon px-7 pb-8 pt-2.25">
         <Icon className="w-9 h-9 text-oro mb-5" />
         <h3 className="type-h3 text-white mb-3 transition-colors duration-300 group-hover:text-champagne">
           {title}

@@ -21,6 +21,21 @@ export const CONTACT = {
   address: "Guadalajara, Jalisco, México",
 };
 
+// ── Business Hours ───────────────────────────────────────────────────────────
+// Shown in the footer and contact page, and published in the LocalBusiness
+// JSON-LD. Times are 24h "HH:MM"; an empty slots list means closed.
+export const BUSINESS_HOURS = [
+  {
+    label: "Lunes a Viernes",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    slots: [
+      ["09:00", "14:00"],
+      ["16:00", "18:30"],
+    ],
+  },
+  { label: "Sábado", dayOfWeek: ["Saturday"], slots: [["09:00", "14:30"]] },
+];
+
 // ── Social Media ─────────────────────────────────────────────────────────────
 export const SOCIAL = {
   instagram: "https://instagram.com/toldosylonasguadalajara/",
@@ -49,7 +64,11 @@ export const PRODUCTS = [
       "Transformamos terrazas, jardines y fachadas residenciales con toldos a la medida. Cada proyecto combina funcionalidad solar con diseño arquitectónico para elevar el valor de tu hogar.",
     icon: "home",
     href: "/productos/toldos-residenciales",
-    specs: ["Telas Sunbrella y Sattler", "Estructura de aluminio anodizado", "Diseño a la medida de tu fachada"],
+    specs: [
+      "Telas Sunbrella y Sattler",
+      "Estructura de aluminio anodizado",
+      "Diseño a la medida de tu fachada",
+    ],
     keywords: ["toldos residenciales Guadalajara", "toldos para casa"],
   },
   {
@@ -61,19 +80,26 @@ export const PRODUCTS = [
       "Habilitamos terrazas, exteriores y fachadas comerciales con sistemas de cubierta que atraen clientes y extienden los espacios operativos durante todo el año.",
     icon: "building",
     href: "/productos/sistemas-comerciales",
-    specs: ["Branding e impresión en lona", "Cubiertas para terrazas y fachadas", "Uso intensivo todo el año"],
+    specs: [
+      "Branding e impresión en lona",
+      "Cubiertas para terrazas y fachadas",
+      "Uso intensivo todo el año",
+    ],
     keywords: ["toldos comerciales Guadalajara", "toldos para restaurante"],
   },
   {
     id: "lonas-industriales",
     title: "Lonas Industriales",
-    shortDesc:
-      "Cubiertas de alta resistencia para proyectos de gran escala.",
+    shortDesc: "Cubiertas de alta resistencia para proyectos de gran escala.",
     fullDesc:
       "Fabricamos lonas técnicas para almacenes, bodegas y proyectos industriales. Materiales de primera calidad con resistencia UV, agua y viento.",
     icon: "factory",
     href: "/productos/lonas-industriales",
-    specs: ["Membranas técnicas Versaidag", "Resistencia UV, agua y viento", "Grandes claros y tensado"],
+    specs: [
+      "Membranas técnicas Versaidag",
+      "Resistencia UV, agua y viento",
+      "Grandes claros y tensado",
+    ],
     keywords: ["lonas industriales Guadalajara", "lonas para bodega"],
   },
   {
@@ -85,7 +111,11 @@ export const PRODUCTS = [
       "Desde pérgolas con vela de sombra hasta instalaciones para eventos, diseñamos soluciones únicas que integran estética y funcionalidad en cualquier escala.",
     icon: "star",
     href: "/productos/proyectos-especiales",
-    specs: ["Velas de sombra y pérgolas", "Arquitectura textil tensada", "Instalaciones para eventos"],
+    specs: [
+      "Velas de sombra y pérgolas",
+      "Arquitectura textil tensada",
+      "Instalaciones para eventos",
+    ],
     keywords: ["arquitectura textil Guadalajara", "toldos para eventos"],
   },
   {
@@ -97,19 +127,26 @@ export const PRODUCTS = [
       "Instalamos sistemas Llaza y otros fabricantes europeos de primera línea. Disponibles con automatización Somfy para control desde tu smartphone.",
     icon: "expand",
     href: "/productos/toldos-retractiles",
-    specs: ["Brazos articulados hasta 6 m", "Motorización Somfy", "Sensor de viento y lluvia"],
+    specs: [
+      "Brazos articulados hasta 6 m",
+      "Motorización Somfy",
+      "Sensor de viento y lluvia",
+    ],
     keywords: ["toldos retractiles Guadalajara", "toldo motorizado"],
   },
   {
     id: "persianas-roller-screen",
     title: "Persianas Roller Screen",
-    shortDesc:
-      "Control solar interior-exterior con visibilidad y privacidad.",
+    shortDesc: "Control solar interior-exterior con visibilidad y privacidad.",
     fullDesc:
       "Las persianas tipo Roller Screen ofrecen protección solar sin perder la vista al exterior. Disponibles en Screen, Sondblock y Sheer Elegance según el nivel de oscurecimiento deseado.",
     icon: "layers",
     href: "/productos/persianas-roller-screen",
-    specs: ["Screen 1% – 10% de apertura", "Sheer Elegance y Blackout", "Manual o motorizada"],
+    specs: [
+      "Screen 1% – 10% de apertura",
+      "Sheer Elegance y Blackout",
+      "Manual o motorizada",
+    ],
     keywords: ["persianas roller screen Guadalajara", "persiana screen"],
   },
   {
@@ -121,10 +158,25 @@ export const PRODUCTS = [
       "Ofrecemos revisión, limpieza, ajuste de mecanismos y reposición de telas. Mantenemos tu toldo en perfectas condiciones para que dure muchos años.",
     icon: "wrench",
     href: "/productos/mantenimiento",
-    specs: ["Revisión y ajuste de mecanismos", "Limpieza de telas técnicas", "Reposición de lonas"],
+    specs: [
+      "Revisión y ajuste de mecanismos",
+      "Limpieza de telas técnicas",
+      "Reposición de lonas",
+    ],
     keywords: ["mantenimiento toldos Guadalajara", "reparacion toldos"],
   },
 ];
+
+// "Productos relacionados" shown at the end of each product page (by id)
+export const RELATED_PRODUCTS: Record<string, string[]> = {
+  "toldos-residenciales": ["toldos-retractiles", "persianas-roller-screen", "proyectos-especiales"],
+  "sistemas-comerciales": ["toldos-retractiles", "proyectos-especiales", "lonas-industriales"],
+  "lonas-industriales": ["sistemas-comerciales", "proyectos-especiales", "mantenimiento"],
+  "proyectos-especiales": ["sistemas-comerciales", "toldos-residenciales", "lonas-industriales"],
+  "toldos-retractiles": ["toldos-residenciales", "persianas-roller-screen", "mantenimiento"],
+  "persianas-roller-screen": ["toldos-retractiles", "toldos-residenciales", "mantenimiento"],
+  mantenimiento: ["toldos-retractiles", "toldos-residenciales", "sistemas-comerciales"],
+};
 
 // ── Brands ───────────────────────────────────────────────────────────────────
 export const BRANDS = [

@@ -104,13 +104,10 @@ export const IMAGES = {
   } as Record<string, string[]>,
 };
 
-// Pairs a product's gallery photos with their captions and alt texts.
-export const galleryFor = (
-  id: string,
-  items: { caption: string; alt: string }[],
-) =>
-  items.map((item, i) => ({
-    ...item,
+// Pairs a product's gallery photos with their alt texts.
+export const galleryFor = (id: string, alts: string[]) =>
+  alts.map((alt, i) => ({
+    alt,
     src: IMAGES.productGallery[id][i],
     width: 1600,
     height: 1067,
