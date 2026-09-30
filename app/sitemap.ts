@@ -19,23 +19,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${SITE_URL}/servicios`,
+      url: `${SITE_URL}/productos`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
-      url: `${SITE_URL}/servicios/toldos-retractiles`,
+      url: `${SITE_URL}/productos/toldos-retractiles`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
-      url: `${SITE_URL}/servicios/persianas-roller-screen`,
+      url: `${SITE_URL}/productos/persianas-roller-screen`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...[
+      "toldos-residenciales",
+      "sistemas-comerciales",
+      "lonas-industriales",
+      "proyectos-especiales",
+      "mantenimiento",
+    ].map((slug) => ({
+      url: `${SITE_URL}/productos/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${SITE_URL}/galeria`,
       lastModified: new Date(),

@@ -3,8 +3,9 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
+import ProductGallery from "@/components/ProductGallery";
 import { SITE_URL } from "@/lib/constants";
-import { IMAGES } from "@/lib/images";
+import { IMAGES, galleryFor } from "@/lib/images";
 import { ShieldIcon, ComfortIcon, RetractableIcon } from "@/components/icons/LuxuryIcons";
 
 export const metadata: Metadata = {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     "toldo retractil brazos articulados",
     "toldo motorizado Somfy",
   ],
-  alternates: { canonical: `${SITE_URL}/servicios/toldos-retractiles` },
+  alternates: { canonical: `${SITE_URL}/productos/toldos-retractiles` },
 };
 
 const FEATURES = [
@@ -45,6 +46,16 @@ const WHY = [
   { Icon: RetractableIcon, title: "Control inteligente", desc: "Motorización con app, voz o sensor automático." },
 ];
 
+// Temporary photos (lib/images.ts) — replace with real installation photos
+const GALLERY = galleryFor("toldos-retractiles", [
+  { caption: "Brazos articulados · Terraza", alt: "Toldo retráctil de brazos articulados en terraza residencial" },
+  { caption: "Toldo cofre · Deck", alt: "Toldo cofre retráctil sobre deck de madera" },
+  { caption: "Pérgola bioclimática · Alberca", alt: "Pérgola bioclimática junto a alberca en Zapopan" },
+  { caption: "Motorizado Somfy · Sala exterior", alt: "Toldo retráctil motorizado con control Somfy en sala exterior" },
+  { caption: "Brazos articulados · Fachada", alt: "Toldo retráctil sobre fachada de residencia contemporánea" },
+  { caption: "Sistema Llaza · Hotel", alt: "Toldos retráctiles Llaza en terraza de hotel" },
+]);
+
 export default function ToldosRetractilesPage() {
   return (
     <>
@@ -60,7 +71,7 @@ export default function ToldosRetractilesPage() {
         imageAlt="Terraza de madera con camastros frente al mar"
         breadcrumb={[
           { label: "Inicio", href: "/" },
-          { label: "Servicios", href: "/servicios" },
+          { label: "Productos", href: "/productos" },
           { label: "Toldos Retráctiles" },
         ]}
       />
@@ -106,6 +117,13 @@ export default function ToldosRetractilesPage() {
           </div>
         </div>
       </section>
+
+      <ProductGallery
+        id="gallery-heading"
+        title="Toldos retráctiles instalados"
+        subtitle="Sistemas manuales y motorizados en terrazas, fachadas y hoteles de la Zona Metropolitana de Guadalajara."
+        images={GALLERY}
+      />
 
       <CtaSection
         title="Solicita tu cotización de toldo retráctil"

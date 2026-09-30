@@ -22,35 +22,46 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // "Servicios" section was renamed to "Productos"
+      {
+        source: "/servicios",
+        destination: "/productos",
+        permanent: true,
+      },
+      {
+        source: "/servicios/:slug",
+        destination: "/productos/:slug",
+        permanent: true,
+      },
       // Preserve SEO for pages that move to new URL structure
       {
         source: "/toldos-retractiles",
-        destination: "/servicios/toldos-retractiles",
+        destination: "/productos/toldos-retractiles",
         permanent: true,
       },
       {
         source: "/persianas-roller-screen",
-        destination: "/servicios/persianas-roller-screen",
+        destination: "/productos/persianas-roller-screen",
         permanent: true,
       },
       {
         source: "/servicios-de-mantenimiento",
-        destination: "/servicios",
+        destination: "/productos/mantenimiento",
         permanent: true,
       },
       {
         source: "/arquitectura-textil",
-        destination: "/servicios",
+        destination: "/productos/proyectos-especiales",
         permanent: true,
       },
       {
         source: "/comercial-95",
-        destination: "/servicios",
+        destination: "/productos/proyectos-especiales",
         permanent: true,
       },
       {
         source: "/nuestros-productos",
-        destination: "/materiales",
+        destination: "/productos",
         permanent: true,
       },
       {
@@ -60,22 +71,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/general-3",
-        destination: "/nosotros",
+        destination: "/materiales",
         permanent: true,
       },
       {
         source: "/productos-siplan",
-        destination: "/servicios/toldos-retractiles",
+        destination: "/productos/toldos-retractiles",
         permanent: true,
       },
       {
         source: "/retractiles-siplan",
-        destination: "/servicios/toldos-retractiles",
+        destination: "/productos/toldos-retractiles",
         permanent: true,
       },
       {
         source: "/palilleria-sipla",
-        destination: "/servicios/toldos-retractiles",
+        destination: "/productos/toldos-residenciales",
         permanent: true,
       },
     ];

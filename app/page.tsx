@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
-import ServiceCard from "@/components/ServiceCard";
+import ProductCard from "@/components/ProductCard";
 import BrandsBar from "@/components/BrandsBar";
 import ProjectGallery from "@/components/ProjectGallery";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -15,7 +15,7 @@ import {
   ComfortIcon,
   ArrowIcon,
 } from "@/components/icons/LuxuryIcons";
-import { SERVICES, WHATSAPP_URL, SITE_URL } from "@/lib/constants";
+import { PRODUCTS, WHATSAPP_URL, SITE_URL } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -49,7 +49,7 @@ const PILLARS = [
 ];
 
 export default function HomePage() {
-  const featuredServices = SERVICES.slice(0, 4);
+  const featuredProducts = PRODUCTS.slice(0, 4);
 
   return (
     <>
@@ -133,28 +133,28 @@ export default function HomePage() {
 
       {/* Catalog */}
       <section
-        id="servicios"
+        id="productos"
         className="bg-grafito texture-lino py-28 md:py-40"
-        aria-labelledby="services-heading"
+        aria-labelledby="products-heading"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
-            id="services-heading"
+            id="products-heading"
             eyebrow="Catálogo"
             title="Soluciones de arquitectura exterior"
             subtitle="Fabricamos a la medida para proyectos residenciales, comerciales e industriales en toda la Zona Metropolitana de Guadalajara."
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredServices.map((service, i) => (
-              <Reveal key={service.id} delay={i * 0.1} className="h-full">
-                <ServiceCard {...service} />
+            {featuredProducts.map((product, i) => (
+              <Reveal key={product.id} delay={i * 0.1} className="h-full">
+                <ProductCard {...product} />
               </Reveal>
             ))}
           </div>
 
           <Reveal className="text-center mt-16">
-            <Link href="/servicios" className="btn-oro">
+            <Link href="/productos" className="btn-oro">
               Ver catálogo completo
               <ArrowIcon />
             </Link>

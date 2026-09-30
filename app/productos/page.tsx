@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import ServiceCard from "@/components/ServiceCard";
+import ProductCard from "@/components/ProductCard";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import CtaSection from "@/components/ui/CtaSection";
 import Reveal from "@/components/ui/Reveal";
-import { SERVICES, SITE_URL } from "@/lib/constants";
+import { PRODUCTS, SITE_URL } from "@/lib/constants";
 import { IMAGES } from "@/lib/images";
 
 const PROCESS = [
@@ -31,7 +31,7 @@ const PROCESS = [
 ];
 
 export const metadata: Metadata = {
-  title: "Servicios — Toldos Residenciales, Comerciales e Industriales",
+  title: "Productos — Toldos Residenciales, Comerciales e Industriales",
   description:
     "Fabricamos toldos residenciales, comerciales e industriales en Guadalajara. Toldos retráctiles, persianas Roller Screen, lonas y cubiertas especiales. Cotiza sin compromiso.",
   keywords: [
@@ -41,14 +41,14 @@ export const metadata: Metadata = {
     "toldos residenciales",
     "persianas roller screen Guadalajara",
   ],
-  alternates: { canonical: `${SITE_URL}/servicios` },
+  alternates: { canonical: `${SITE_URL}/productos` },
 };
 
-const serviceSchema = {
+const productSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Servicios de Toldos y Lonas Guadalajara",
-  itemListElement: SERVICES.map((s, i) => ({
+  name: "Productos de Toldos y Lonas Guadalajara",
+  itemListElement: PRODUCTS.map((s, i) => ({
     "@type": "ListItem",
     position: i + 1,
     name: s.title,
@@ -57,12 +57,12 @@ const serviceSchema = {
   })),
 };
 
-export default function ServiciosPage() {
+export default function ProductosPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
 
       <PageHero
@@ -73,9 +73,9 @@ export default function ServiciosPage() {
           </>
         }
         subtitle="Diseñamos, fabricamos e instalamos toldos y sistemas de protección solar para proyectos residenciales, comerciales e industriales en Guadalajara y zona metropolitana."
-        image={IMAGES.pageHero.servicios}
+        image={IMAGES.pageHero.productos}
         imageAlt="Terraza con pérgola y alberca en residencia contemporánea"
-        breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Servicios" }]}
+        breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Productos" }]}
       />
 
       {/* Catalog */}
@@ -88,14 +88,14 @@ export default function ServiciosPage() {
             subtitle="Pasa el cursor sobre cada pieza para conocer sus detalles técnicos."
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((service, i) => (
+            {PRODUCTS.map((product, i) => (
               <Reveal
-                key={service.id}
+                key={product.id}
                 delay={(i % 3) * 0.1}
                 className="h-full scroll-mt-28"
               >
-                <div id={service.id} className="h-full">
-                  <ServiceCard {...service} />
+                <div id={product.id} className="h-full">
+                  <ProductCard {...product} />
                 </div>
               </Reveal>
             ))}

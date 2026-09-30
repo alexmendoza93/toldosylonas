@@ -32,14 +32,14 @@ export const SOCIAL = {
 export const NAV_LINKS = [
   { label: "Inicio", href: "/" },
   { label: "Nosotros", href: "/nosotros" },
-  { label: "Servicios", href: "/servicios" },
+  { label: "Productos", href: "/productos" },
   { label: "Galería", href: "/galeria" },
   { label: "Materiales", href: "/materiales" },
   { label: "Contacto", href: "/contactenos" },
 ];
 
-// ── Services ─────────────────────────────────────────────────────────────────
-export const SERVICES = [
+// ── Products ─────────────────────────────────────────────────────────────────
+export const PRODUCTS = [
   {
     id: "toldos-residenciales",
     title: "Toldos Residenciales",
@@ -48,7 +48,7 @@ export const SERVICES = [
     fullDesc:
       "Transformamos terrazas, jardines y fachadas residenciales con toldos a la medida. Cada proyecto combina funcionalidad solar con diseño arquitectónico para elevar el valor de tu hogar.",
     icon: "home",
-    href: "/servicios#toldos-residenciales",
+    href: "/productos/toldos-residenciales",
     specs: ["Telas Sunbrella y Sattler", "Estructura de aluminio anodizado", "Diseño a la medida de tu fachada"],
     keywords: ["toldos residenciales Guadalajara", "toldos para casa"],
   },
@@ -60,7 +60,7 @@ export const SERVICES = [
     fullDesc:
       "Habilitamos terrazas, exteriores y fachadas comerciales con sistemas de cubierta que atraen clientes y extienden los espacios operativos durante todo el año.",
     icon: "building",
-    href: "/servicios#sistemas-comerciales",
+    href: "/productos/sistemas-comerciales",
     specs: ["Branding e impresión en lona", "Cubiertas para terrazas y fachadas", "Uso intensivo todo el año"],
     keywords: ["toldos comerciales Guadalajara", "toldos para restaurante"],
   },
@@ -72,7 +72,7 @@ export const SERVICES = [
     fullDesc:
       "Fabricamos lonas técnicas para almacenes, bodegas y proyectos industriales. Materiales de primera calidad con resistencia UV, agua y viento.",
     icon: "factory",
-    href: "/servicios#lonas-industriales",
+    href: "/productos/lonas-industriales",
     specs: ["Membranas técnicas Versaidag", "Resistencia UV, agua y viento", "Grandes claros y tensado"],
     keywords: ["lonas industriales Guadalajara", "lonas para bodega"],
   },
@@ -84,7 +84,7 @@ export const SERVICES = [
     fullDesc:
       "Desde pérgolas con vela de sombra hasta instalaciones para eventos, diseñamos soluciones únicas que integran estética y funcionalidad en cualquier escala.",
     icon: "star",
-    href: "/servicios#proyectos-especiales",
+    href: "/productos/proyectos-especiales",
     specs: ["Velas de sombra y pérgolas", "Arquitectura textil tensada", "Instalaciones para eventos"],
     keywords: ["arquitectura textil Guadalajara", "toldos para eventos"],
   },
@@ -96,7 +96,7 @@ export const SERVICES = [
     fullDesc:
       "Instalamos sistemas Llaza y otros fabricantes europeos de primera línea. Disponibles con automatización Somfy para control desde tu smartphone.",
     icon: "expand",
-    href: "/servicios/toldos-retractiles",
+    href: "/productos/toldos-retractiles",
     specs: ["Brazos articulados hasta 6 m", "Motorización Somfy", "Sensor de viento y lluvia"],
     keywords: ["toldos retractiles Guadalajara", "toldo motorizado"],
   },
@@ -108,7 +108,7 @@ export const SERVICES = [
     fullDesc:
       "Las persianas tipo Roller Screen ofrecen protección solar sin perder la vista al exterior. Disponibles en Screen, Sondblock y Sheer Elegance según el nivel de oscurecimiento deseado.",
     icon: "layers",
-    href: "/servicios/persianas-roller-screen",
+    href: "/productos/persianas-roller-screen",
     specs: ["Screen 1% – 10% de apertura", "Sheer Elegance y Blackout", "Manual o motorizada"],
     keywords: ["persianas roller screen Guadalajara", "persiana screen"],
   },
@@ -120,7 +120,7 @@ export const SERVICES = [
     fullDesc:
       "Ofrecemos revisión, limpieza, ajuste de mecanismos y reposición de telas. Mantenemos tu toldo en perfectas condiciones para que dure muchos años.",
     icon: "wrench",
-    href: "/servicios#mantenimiento",
+    href: "/productos/mantenimiento",
     specs: ["Revisión y ajuste de mecanismos", "Limpieza de telas técnicas", "Reposición de lonas"],
     keywords: ["mantenimiento toldos Guadalajara", "reparacion toldos"],
   },

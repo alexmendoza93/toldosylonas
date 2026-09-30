@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SERVICE_ICONS, SpecialIcon, ArrowIcon } from "@/components/icons/LuxuryIcons";
+import { PRODUCT_ICONS, SpecialIcon, ArrowIcon } from "@/components/icons/LuxuryIcons";
 import { IMAGES } from "@/lib/images";
 
-interface ServiceCardProps {
+interface ProductCardProps {
   id: string;
   title: string;
   shortDesc: string;
@@ -12,16 +12,16 @@ interface ServiceCardProps {
   specs?: string[];
 }
 
-export default function ServiceCard({
+export default function ProductCard({
   id,
   title,
   shortDesc,
   icon,
   href,
   specs = [],
-}: ServiceCardProps) {
-  const Icon = SERVICE_ICONS[icon] ?? SpecialIcon;
-  const image = IMAGES.services[id];
+}: ProductCardProps) {
+  const Icon = PRODUCT_ICONS[icon] ?? SpecialIcon;
+  const image = IMAGES.products[id];
 
   return (
     <Link

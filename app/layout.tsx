@@ -108,13 +108,13 @@ const structuredData = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Servicios de toldos y lonas",
+    name: "Productos de toldos y lonas",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Toldos Residenciales" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sistemas Comerciales" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lonas Industriales" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Toldos Retráctiles" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Persianas Roller Screen" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Toldos Residenciales" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Sistemas Comerciales" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Lonas Industriales" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Toldos Retráctiles" } },
+      { "@type": "Offer", itemOffered: { "@type": "Product", name: "Persianas Roller Screen" } },
     ],
   },
   sameAs: [

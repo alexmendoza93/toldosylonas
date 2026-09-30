@@ -147,7 +147,7 @@ export const ArrowIcon = ({ className = "w-4 h-4" }: IconProps) => (
   </svg>
 );
 
-export const SERVICE_ICONS: Record<string, (p: IconProps) => React.JSX.Element> = {
+export const PRODUCT_ICONS: Record<string, (p: IconProps) => React.JSX.Element> = {
   home: ResidentialIcon,
   building: CommercialIcon,
   factory: IndustrialIcon,
