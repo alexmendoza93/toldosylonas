@@ -1,6 +1,9 @@
 // Temporary Unsplash photography.
 // To use real client photos: drop them in public/images/ and replace the URL
-// with the local path (e.g. "/images/hero.jpg"). No other change needed.
+// with asset("/images/hero.jpg"). asset() adds the GitHub Pages basePath.
+export const asset = (path: string) =>
+  `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 const u = (id: string, w = 2000) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`;
 

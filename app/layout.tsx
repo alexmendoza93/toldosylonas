@@ -44,11 +44,15 @@ export const metadata: Metadata = {
   authors: [{ name: COMPANY_NAME }],
   creator: COMPANY_NAME,
   publisher: COMPANY_NAME,
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: { index: true, follow: true },
-  },
+  // The GitHub Pages preview must not compete with the live site in Google.
+  robots:
+    process.env.GITHUB_PAGES === "true"
+      ? { index: false, follow: false }
+      : {
+          index: true,
+          follow: true,
+          googleBot: { index: true, follow: true },
+        },
   openGraph: {
     type: "website",
     locale: "es_MX",

@@ -1,7 +1,15 @@
 import path from "node:path";
 import type { NextConfig } from "next";
 
+// Preview build for GitHub Pages (set by the deploy workflow). The site is
+// served from alexmendoza93.github.io/toldosylonas, so it needs a basePath.
+const isGithubPages = process.env.GITHUB_PAGES === "true";
+const basePath = isGithubPages ? "/toldosylonas" : "";
+
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   // A stray lockfile in the home folder makes Turbopack pick ~ as the root
   // and watch the whole user directory (runs out of memory). Pin it here.
   turbopack: {
@@ -80,4 +88,15 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// GitHub Pages only serves static files: export the site, skip image
+// optimization, and drop the redirects (they need a server).
+export default isGithubPages
+  ? {
+      ...nextConfig,
+      output: "export",
+      basePath,
+      trailingSlash: true,
+      redirects: undefined,
+      images: { ...nextConfig.images, unoptimized: true },
+    } satisfies NextConfig
+  : nextConfig;
