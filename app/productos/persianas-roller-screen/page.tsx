@@ -9,15 +9,15 @@ import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Persianas Roller Screen Guadalajara — Screen, Sondblock, Sheer",
+  title: "Persianas Roller y Cortinas Exteriores Guadalajara — Screen, Sondblock, Sheer",
   description:
-    "Persianas Roller Screen en Guadalajara. Tela Screen, Sondblock y Sheer Elegance. Control solar con visibilidad al exterior. Motorización disponible. Cotiza sin compromiso.",
+    "Fabricamos persianas roller en Guadalajara: Screen, Sondblock y Sheer Elegance para interior, y cortinas exteriores Dickson Sunworker para terrazas. Manuales o motorizadas.",
   keywords: [
     "persianas roller screen Guadalajara",
     "persiana screen Guadalajara",
     "persiana sondblock",
     "persiana sheer elegance",
-    "control solar interior",
+    "cortinas exteriores para terraza",
   ],
   alternates: { canonical: `${SITE_URL}/productos/persianas-roller-screen` },
 };
@@ -31,8 +31,8 @@ const TYPES = [
   },
   {
     name: "Sondblock",
-    openness: "1% – 3%",
-    desc: "Mayor privacidad y bloqueo solar. Perfecto para dormitorios y espacios que requieren mayor oscurecimiento.",
+    openness: "Opaca",
+    desc: "Tela que bloquea la luz para dormitorios, salas de juntas y espacios que requieren oscurecimiento y privacidad.",
     benefit: "Mayor privacidad",
   },
   {
@@ -42,10 +42,10 @@ const TYPES = [
     benefit: "Elegancia premium",
   },
   {
-    name: "Blackout",
-    openness: "0% (oscurecimiento total)",
-    desc: "Oscurecimiento total para proyectores, dormitorios o espacios que requieren control de luz completo.",
-    benefit: "Oscurecimiento total",
+    name: "Dickson Sunworker",
+    openness: "Exterior",
+    desc: "Cortina enrollable de exterior para cerrar terrazas y pórticos del sol bajo y el viento, con la vista despejada.",
+    benefit: "Terrazas protegidas",
   },
 ];
 
@@ -56,14 +56,14 @@ const BENEFITS = [
   { title: "Motorización opcional", desc: "Disponible con motor Somfy para control remoto, por app o automático." },
 ];
 
-// Temporary photos (lib/images.ts) — replace with real installation photos
+// Real installation photos (lib/images.ts)
 const GALLERY = galleryFor("persianas-roller-screen", [
-  "Persiana Roller Screen en recámara con luz natural filtrada",
-  "Persiana Sheer Elegance en sala de estar",
-  "Persiana Roller Screen en estudio residencial",
-  "Persiana Sondblock en suite de hotel en Guadalajara",
-  "Persianas Roller Screen en ventanal de doble altura",
-  "Persianas motorizadas en residencia de Zapopan",
+  "Cortinas screen negras cerrando terraza de noche",
+  "Cortina exterior enrollable screen en terraza",
+  "Cortinas exteriores enrollables en fachada de residencia",
+  "Cortinas roller exteriores en terraza de residencia con jardín",
+  "Terraza cerrada con cortinas screen de noche",
+  "Residencia con cortinas exteriores iluminada de noche",
 ]);
 
 export default function PersianasRollerScreenPage() {
@@ -73,16 +73,16 @@ export default function PersianasRollerScreenPage() {
         eyebrow="Control solar interior"
         title={
           <>
-            Persianas <span className="text-champagne">Roller Screen</span>
+            Persianas <span className="text-champagne">y Cortinas</span>
           </>
         }
-        subtitle="Protección solar interior con visibilidad al exterior. Disponibles en Screen, Sondblock, Sheer Elegance y Blackout. Manuales o motorizadas."
+        subtitle="Persianas roller para interior en Screen, Sondblock y Sheer Elegance, y cortinas exteriores Dickson Sunworker para terrazas. Manuales o motorizadas."
         image={IMAGES.pageHero.roller}
         imageAlt="Recámara elegante con cortinas y luz natural"
         breadcrumb={[
           { label: "Inicio", href: "/" },
           { label: "Productos", href: "/productos" },
-          { label: "Roller Screen" },
+          { label: "Persianas y Cortinas" },
         ]}
       />
 
@@ -132,7 +132,7 @@ export default function PersianasRollerScreenPage() {
       <ProductGallery
         id="gallery-heading"
         title="Roller Screen en espacios reales"
-        subtitle="Instalaciones a la medida en residencias, oficinas y hoteles de Guadalajara."
+        subtitle="Cortinas exteriores y persianas instaladas a la medida en residencias y negocios de Guadalajara."
         images={GALLERY}
       />
 

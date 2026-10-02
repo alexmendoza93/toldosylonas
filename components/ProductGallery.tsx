@@ -71,7 +71,7 @@ export default function ProductGallery({
                     alt={img.alt}
                     fill
                     sizes={cell.sizes}
-                    className="object-cover grayscale brightness-75 transition-all duration-1000 ease-lux group-hover:grayscale-0 group-hover:brightness-90 group-hover:scale-105"
+                    className="object-cover brightness-75 transition-all duration-1000 ease-lux group-hover:brightness-90 group-hover:scale-105"
                   />
                   {/* Hairline gold frame that settles in on hover */}
                   <span className="pointer-events-none absolute inset-4 border border-oro/0 transition-all duration-700 ease-lux group-hover:inset-3 group-hover:border-oro/40" />

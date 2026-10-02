@@ -9,72 +9,72 @@ import { SITE_URL } from "@/lib/constants";
 import { IMAGES, galleryFor } from "@/lib/images";
 
 export const metadata: Metadata = {
-  title: "Lonas Industriales Guadalajara — Bodegas, Naves y Andenes",
+  title: "Lonas a la Medida y Malla Sombra Guadalajara",
   description:
-    "Fabricamos lonas industriales en Guadalajara: cubiertas para bodegas, andenes de carga, cortinas divisorias y membranas técnicas Versaidag. Resistencia UV, agua y viento.",
+    "Fabricamos lonas a la medida en Guadalajara: lona impermeable para cubiertas y usos industriales, cortinas de lona con cristal para terrazas y malla sombra en seis colores.",
   keywords: [
+    "lonas a la medida Guadalajara",
+    "malla sombra Guadalajara",
+    "cortinas de lona para terraza",
     "lonas industriales Guadalajara",
-    "lonas para bodega",
-    "cortinas industriales divisorias",
-    "cubiertas para andenes de carga",
-    "membranas Versaidag",
+    "lona impermeable Guadalajara",
   ],
   alternates: { canonical: `${SITE_URL}/productos/lonas-industriales` },
 };
 
 const APPLICATIONS = [
   {
-    title: "Cubiertas para bodegas",
-    desc: "Lonas tensadas sobre estructura para almacenar y proteger mercancía y maquinaria a cielo abierto.",
+    title: "Lona impermeable a la medida",
+    desc: "Lonas cortadas y termoselladas a tu medida para recubrir estructuras, techar áreas y proteger mercancía.",
   },
   {
-    title: "Andenes de carga",
-    desc: "Cubiertas y faldones que protegen las maniobras de carga y descarga del sol y la lluvia.",
+    title: "Cortinas de lona con cristal",
+    desc: "Cierres perimetrales de lona con ventanas transparentes para terrazas de restaurante: cortan el viento y la lluvia sin perder la vista.",
   },
   {
-    title: "Cortinas divisorias",
-    desc: "Cortinas industriales para separar áreas de trabajo, controlar polvo y conservar la temperatura.",
+    title: "Malla sombra",
+    desc: "Bloquea los rayos UV y baja el calor dejando pasar el aire. En beige, gris, negro, verde, café y azul.",
   },
   {
-    title: "Grandes claros",
-    desc: "Membranas técnicas tensadas que cubren superficies amplias con un mínimo de apoyos.",
+    title: "Usos industriales",
+    desc: "Cubiertas para bodegas, andenes de carga y patios de maniobra con lonas de alta resistencia.",
   },
 ];
 
 const SPECS = [
-  { title: "Membranas técnicas", desc: "Lonas de PVC y membranas Versaidag de alta tenacidad para uso industrial." },
+  { title: "Materiales técnicos", desc: "Lonas de PVC, membranas Versaidag y malla sombra de alta resistencia a la intemperie." },
   { title: "Resistencia al clima", desc: "Materiales con protección UV, impermeables y calculados para cargas de viento." },
   { title: "Fabricación a la medida", desc: "Corte, termosellado y confección en nuestra planta de Guadalajara." },
   { title: "Instalación especializada", desc: "Equipo con experiencia en montaje de estructuras y tensado en altura." },
 ];
 
-// Temporary photos (lib/images.ts) — replace with real installation photos
+// Real installation photos (lib/images.ts)
 const GALLERY = galleryFor("lonas-industriales", [
-  "Cubierta de lona industrial para bodega",
-  "Membrana tensada sobre nave industrial",
-  "Cubierta para andén de carga",
-  "Cortina industrial divisoria en planta",
-  "Cubierta de gran claro en patio de maniobras",
-  "Lona tensada en almacén de la zona metropolitana",
+  "Cortinas de lona naranja con ventanas de cristal en terraza de restaurante",
+  "Terraza de restaurante cerrada con cortinas de lona y cristal",
+  "Cierre perimetral de lona con vista al exterior",
+  "Cubierta de lona tensada sobre estructura metálica",
+  "Plafón de lona tensada en área techada",
+  "Instalación de cortinas de lona en restaurante campestre",
 ]);
 
 export default function LonasIndustrialesPage() {
   return (
     <>
       <PageHero
-        eyebrow="Escala industrial"
+        eyebrow="Lonas a la medida"
         title={
           <>
-            Lonas <span className="text-champagne">Industriales</span>
+            Lonas <span className="text-champagne">y Malla Sombra</span>
           </>
         }
-        subtitle="Cubiertas y cortinas de alta resistencia para bodegas, naves y centros de distribución. Materiales técnicos fabricados a la medida de tu operación."
+        subtitle="Lonas impermeables a la medida, cortinas de lona con cristal para terrazas y malla sombra. Fabricadas en nuestro taller de Guadalajara."
         image={IMAGES.pageHero.industriales}
         imageAlt="Edificio contemporáneo con fachada de madera y metal"
         breadcrumb={[
           { label: "Inicio", href: "/" },
           { label: "Productos", href: "/productos" },
-          { label: "Lonas Industriales" },
+          { label: "Lonas y Malla Sombra" },
         ]}
       />
 
@@ -124,8 +124,8 @@ export default function LonasIndustrialesPage() {
 
       <ProductGallery
         id="gallery-heading"
-        title="Lonas industriales en obra"
-        subtitle="Cubiertas y lonas para empresas de Guadalajara, El Salto y la zona metropolitana."
+        title="Lonas en obra"
+        subtitle="Cierres de terraza y cubiertas de lona fabricados e instalados en Guadalajara y zona metropolitana."
         images={GALLERY}
       />
 
@@ -133,7 +133,7 @@ export default function LonasIndustrialesPage() {
 
 
       <CtaSection
-        title="Cotiza tu proyecto industrial"
+        title="Cotiza tu lona a la medida"
         text="Revisamos tus planos o visitamos la planta para proponerte la lona, la estructura y el sistema de tensado adecuados."
       />
     </>

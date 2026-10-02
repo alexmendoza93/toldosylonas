@@ -36,8 +36,8 @@ const INCLUDES = [
     desc: "Reemplazamos la tela desgastada aprovechando tu estructura, con opciones Sunbrella, Sattler y Dickson.",
   },
   {
-    title: "Refacciones y motores",
-    desc: "Refacciones para toldos retráctiles y palillerías, y reparación o cambio de motores y controles Somfy.",
+    title: "Refacciones y accesorios",
+    desc: "Venta de brazos, soportes, mecanismos, tubos, tornillería y motores Somfy para toldos y persianas.",
   },
 ];
 
@@ -48,14 +48,14 @@ const BENEFITS = [
   { title: "Cualquier marca", desc: "Atendemos toldos instalados por nosotros o por otros fabricantes." },
 ];
 
-// Temporary photos (lib/images.ts) — replace with real before/after photos
+// Real installation photos (lib/images.ts)
 const GALLERY = galleryFor("mantenimiento", [
-  "Toldo con lona nueva en terraza residencial",
-  "Toldo retráctil después de ajuste de brazos",
-  "Palillería después de limpieza de tela",
-  "Toldo motorizado con motor Somfy reparado",
-  "Toldo de fachada con tela renovada",
-  "Mantenimiento preventivo de toldos en hotel",
+  "Soporte de brazo para toldo retráctil",
+  "Mecanismo de manivela para toldo enrollable",
+  "Brazos articulados de toldo retráctil con lona roja",
+  "Instalación de toldo en fachada",
+  "Instalación de toldo en terraza de restaurante",
+  "Showroom con muestrarios de telas para toldos",
 ]);
 
 export default function MantenimientoPage() {
@@ -65,7 +65,7 @@ export default function MantenimientoPage() {
         eyebrow="Cuidamos tu inversión"
         title={
           <>
-            Servicio de <span className="text-champagne">Mantenimiento</span>
+            Mantenimiento <span className="text-champagne">y Refacciones</span>
           </>
         }
         subtitle="Revisión, limpieza, refacciones y cambio de lona para que tu toldo luzca y funcione como el primer día."
@@ -74,7 +74,7 @@ export default function MantenimientoPage() {
         breadcrumb={[
           { label: "Inicio", href: "/" },
           { label: "Productos", href: "/productos" },
-          { label: "Mantenimiento" },
+          { label: "Mantenimiento y Refacciones" },
         ]}
       />
 
@@ -124,8 +124,8 @@ export default function MantenimientoPage() {
 
       <ProductGallery
         id="gallery-heading"
-        title="Toldos que recuperaron su forma"
-        subtitle="Mantenimientos, reparaciones y cambios de lona en Guadalajara y zona metropolitana."
+        title="Piezas, mecanismos y taller"
+        subtitle="Refacciones originales, instalación y mantenimiento en Guadalajara y zona metropolitana."
         images={GALLERY}
       />
 

@@ -81,13 +81,6 @@ export default function Footer() {
           <div className="lg:col-span-4 text-center lg:text-left">
             <h3 className="type-label text-oro mb-7">Contacto</h3>
             <ul className="flex flex-col gap-3.5 type-small">
-              {CONTACT.phone && (
-                <li>
-                  <a href={`tel:${CONTACT.phone}`} className="text-crema/60 hover:text-champagne transition-colors">
-                    {CONTACT.phone}
-                  </a>
-                </li>
-              )}
               <li>
                 <a href={`mailto:${CONTACT.email}`} className="text-crema/60 hover:text-champagne transition-colors">
                   {CONTACT.email}

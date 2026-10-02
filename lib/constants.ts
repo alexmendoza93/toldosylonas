@@ -17,8 +17,10 @@ export const COMPANY_SLOGAN =
 // TODO: Fill in real contact data before deploy
 export const CONTACT = {
   email: "contacto@toldosylonasgdl.com",
-  phone: "",
-  address: "Guadalajara, Jalisco, México",
+  phone: "33 1824 1919",
+  // Taller y showroom (from the client's Facebook page)
+  street: "Garibaldi 1469, Col. Ladrón de Guevara",
+  address: "Garibaldi 1469, Col. Ladrón de Guevara, Guadalajara, Jalisco",
 };
 
 // ── Business Hours ───────────────────────────────────────────────────────────
@@ -59,62 +61,62 @@ export const PRODUCTS = [
     id: "toldos-residenciales",
     title: "Toldos Residenciales",
     shortDesc:
-      "Diseños exclusivos para hogares premium con elegancia y durabilidad.",
+      "Toldos fijos, capotas, palillerías y toldos para cochera hechos a la medida de tu casa.",
     fullDesc:
-      "Transformamos terrazas, jardines y fachadas residenciales con toldos a la medida. Cada proyecto combina funcionalidad solar con diseño arquitectónico para elevar el valor de tu hogar.",
+      "Fabricamos e instalamos toldos para fachadas, ventanas, terrazas, jardines y cocheras. Toldos fijos, tipo capota, palillerías y toldos tipo pérgola con telas acrílicas importadas.",
     icon: "home",
     href: "/productos/toldos-residenciales",
     specs: [
-      "Telas Sunbrella y Sattler",
-      "Estructura de aluminio anodizado",
-      "Diseño a la medida de tu fachada",
+      "Toldos fijos, capotas y palillerías",
+      "Toldos para cochera y tipo pérgola",
+      "Telas acrílicas Sunbrella y Sattler",
     ],
     keywords: ["toldos residenciales Guadalajara", "toldos para casa"],
   },
   {
     id: "sistemas-comerciales",
-    title: "Sistemas Comerciales",
+    title: "Toldos Comerciales",
     shortDesc:
-      "Soluciones para restaurantes, hoteles y negocios que proyectan imagen.",
+      "Toldos para locales, restaurantes, plazas y hoteles que hacen visible tu negocio.",
     fullDesc:
-      "Habilitamos terrazas, exteriores y fachadas comerciales con sistemas de cubierta que atraen clientes y extienden los espacios operativos durante todo el año.",
+      "Fabricamos toldos para fachadas de locales, terrazas de restaurante, plazas comerciales y hoteles. Somos fabricantes mayoristas para comercios, constructoras y centros comerciales.",
     icon: "building",
     href: "/productos/sistemas-comerciales",
     specs: [
-      "Branding e impresión en lona",
-      "Cubiertas para terrazas y fachadas",
-      "Uso intensivo todo el año",
+      "Fachadas y marquesinas de locales",
+      "Terrazas de restaurante",
+      "Plazas comerciales y constructoras",
     ],
     keywords: ["toldos comerciales Guadalajara", "toldos para restaurante"],
   },
   {
     id: "lonas-industriales",
-    title: "Lonas Industriales",
-    shortDesc: "Cubiertas de alta resistencia para proyectos de gran escala.",
+    title: "Lonas y Malla Sombra",
+    shortDesc: "Lonas a la medida, cortinas de lona con cristal y malla sombra.",
     fullDesc:
-      "Fabricamos lonas técnicas para almacenes, bodegas y proyectos industriales. Materiales de primera calidad con resistencia UV, agua y viento.",
+      "Fabricamos lonas impermeables a la medida para cubiertas y usos industriales, cortinas de lona con ventanas de cristal para cerrar terrazas, y malla sombra en seis colores.",
     icon: "factory",
     href: "/productos/lonas-industriales",
     specs: [
-      "Membranas técnicas Versaidag",
-      "Resistencia UV, agua y viento",
-      "Grandes claros y tensado",
+      "Lona impermeable a la medida",
+      "Cortinas de lona con cristal",
+      "Malla sombra en 6 colores",
     ],
-    keywords: ["lonas industriales Guadalajara", "lonas para bodega"],
+    keywords: ["lonas a la medida Guadalajara", "malla sombra Guadalajara"],
   },
   {
     id: "proyectos-especiales",
     title: "Proyectos Especiales",
     shortDesc:
-      "Arquitectura textil a la medida para espacios únicos y eventos.",
+      "Arquitectura textil y toldos de gran formato diseñados para un solo lugar.",
     fullDesc:
-      "Desde pérgolas con vela de sombra hasta instalaciones para eventos, diseñamos soluciones únicas que integran estética y funcionalidad en cualquier escala.",
+      "Velarias, velas de sombra, pérgolas y toldos de gran formato. Como el de Plaza Paraíso en Tabachines: un toldo perimetral continuo de más de 100 metros lineales.",
     icon: "star",
     href: "/productos/proyectos-especiales",
     specs: [
-      "Velas de sombra y pérgolas",
-      "Arquitectura textil tensada",
-      "Instalaciones para eventos",
+      "Toldos perimetrales de gran formato",
+      "Velarias y velas de sombra",
+      "Pérgolas con cubierta",
     ],
     keywords: ["arquitectura textil Guadalajara", "toldos para eventos"],
   },
@@ -122,46 +124,46 @@ export const PRODUCTS = [
     id: "toldos-retractiles",
     title: "Toldos Retráctiles",
     shortDesc:
-      "Sistemas motorizados o manuales que se adaptan a cualquier condición.",
+      "Toldos enrollables de brazo invisible, punto recto o caída vertical, con manivela o motor.",
     fullDesc:
-      "Instalamos sistemas Llaza y otros fabricantes europeos de primera línea. Disponibles con automatización Somfy para control desde tu smartphone.",
+      "Toldos enrollables de brazo invisible o de punto recto, con tejadillo o cofre, accionados con manivela, interruptor o control remoto. Automatización Somfy con sensores de sol, viento y lluvia.",
     icon: "expand",
     href: "/productos/toldos-retractiles",
     specs: [
-      "Brazos articulados hasta 6 m",
-      "Motorización Somfy",
-      "Sensor de viento y lluvia",
+      "Brazo invisible y punto recto",
+      "Manivela, motor o control remoto",
+      "Sensores Somfy de sol, viento y lluvia",
     ],
     keywords: ["toldos retractiles Guadalajara", "toldo motorizado"],
   },
   {
     id: "persianas-roller-screen",
-    title: "Persianas Roller Screen",
-    shortDesc: "Control solar interior-exterior con visibilidad y privacidad.",
+    title: "Persianas y Cortinas Exteriores",
+    shortDesc: "Persianas roller para interior y cortinas screen para terrazas.",
     fullDesc:
-      "Las persianas tipo Roller Screen ofrecen protección solar sin perder la vista al exterior. Disponibles en Screen, Sondblock y Sheer Elegance según el nivel de oscurecimiento deseado.",
+      "Fabricamos persianas roller para interior en Screen, Sondblock y Sheer Elegance, y cortinas enrollables de exterior Dickson Sunworker para cerrar terrazas y fachadas.",
     icon: "layers",
     href: "/productos/persianas-roller-screen",
     specs: [
-      "Screen 1% – 10% de apertura",
-      "Sheer Elegance y Blackout",
+      "Screen, Sondblock y Sheer Elegance",
+      "Cortinas exteriores Dickson Sunworker",
       "Manual o motorizada",
     ],
     keywords: ["persianas roller screen Guadalajara", "persiana screen"],
   },
   {
     id: "mantenimiento",
-    title: "Servicio de Mantenimiento",
+    title: "Mantenimiento y Refacciones",
     shortDesc:
-      "Extendemos la vida útil de tu inversión con mantenimiento preventivo.",
+      "Mantenimiento, cambio de lona y refacciones para toldos y persianas.",
     fullDesc:
-      "Ofrecemos revisión, limpieza, ajuste de mecanismos y reposición de telas. Mantenemos tu toldo en perfectas condiciones para que dure muchos años.",
+      "Revisamos, ajustamos y reparamos toldos de cualquier marca, cambiamos lonas y vendemos piezas y accesorios: brazos, soportes, mecanismos, motores y tornillería.",
     icon: "wrench",
     href: "/productos/mantenimiento",
     specs: [
       "Revisión y ajuste de mecanismos",
-      "Limpieza de telas técnicas",
-      "Reposición de lonas",
+      "Cambio de lona",
+      "Brazos, soportes y motores",
     ],
     keywords: ["mantenimiento toldos Guadalajara", "reparacion toldos"],
   },

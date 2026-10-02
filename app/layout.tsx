@@ -9,6 +9,7 @@ import {
   COMPANY_NAME,
   SEO_KEYWORDS,
   BUSINESS_HOURS,
+  CONTACT,
 } from "@/lib/constants";
 
 const cinzel = Cinzel({
@@ -95,8 +96,10 @@ const structuredData = {
   foundingDate: "2009",
   image: `${SITE_URL}/og-image.jpg`,
   logo: `${SITE_URL}/logo/logo.png`,
+  telephone: "+52 33 1824 1919",
   address: {
     "@type": "PostalAddress",
+    streetAddress: CONTACT.street,
     addressLocality: "Guadalajara",
     addressRegion: "Jalisco",
     addressCountry: "MX",

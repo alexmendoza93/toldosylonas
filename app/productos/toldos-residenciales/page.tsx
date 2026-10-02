@@ -12,12 +12,12 @@ import { ShieldIcon, DiamondIcon, ResidentialIcon } from "@/components/icons/Lux
 export const metadata: Metadata = {
   title: "Toldos Residenciales Guadalajara — Terrazas, Jardines y Fachadas",
   description:
-    "Toldos residenciales a la medida en Guadalajara y Zapopan. Palillerías Siplan, toldos fijos, cortinas para terraza y telas Sunbrella y Sattler. Cotiza sin compromiso.",
+    "Toldos residenciales a la medida en Guadalajara y Zapopan. Toldos fijos, capotas, palillerías, toldos para cochera y tipo pérgola con telas Sunbrella y Sattler. Cotización gratis.",
   keywords: [
     "toldos residenciales Guadalajara",
     "toldos para casa Guadalajara",
     "palilleria Siplan",
-    "cortinas para terraza",
+    "toldos para cochera Guadalajara",
     "toldo para terraza Zapopan",
   ],
   alternates: { canonical: `${SITE_URL}/productos/toldos-residenciales` },
@@ -25,20 +25,20 @@ export const metadata: Metadata = {
 
 const SYSTEMS = [
   {
+    title: "Toldo fijo y capota",
+    desc: "Estructura con tela tensada para accesos, ventanas y balcones. En línea recta o tipo capota, protección permanente que viste la fachada.",
+  },
+  {
+    title: "Toldo para cochera",
+    desc: "Cubre tus autos del sol y la lluvia. Fijo o retráctil, se fabrica al ancho exacto de tu cochera.",
+  },
+  {
     title: "Palillería",
     desc: "Toldo plegable sobre guías laterales que cubre grandes superficies. Sistemas Siplan para terrazas, patios y jardines.",
   },
   {
-    title: "Toldo fijo",
-    desc: "Estructura de aluminio con tela tensada para cocheras, accesos y ventanas. Protección permanente con líneas limpias.",
-  },
-  {
-    title: "Cortinas para terraza",
-    desc: "Cierres verticales enrollables que protegen del sol lateral, el viento y la lluvia sin perder la vista al jardín.",
-  },
-  {
-    title: "Toldo de fachada",
-    desc: "Toldos de ventana y balcón que controlan el calor dentro de casa y visten la fachada con un acabado arquitectónico.",
+    title: "Toldo tipo pérgola",
+    desc: "Elegancia y sombra para terrazas y jardines: tela sobre estructura de pérgola para crear una estancia exterior.",
   },
 ];
 
@@ -48,14 +48,14 @@ const WHY = [
   { Icon: ShieldIcon, title: "Protección real", desc: "Sombra y protección UV para que uses tu terraza en cualquier época del año." },
 ];
 
-// Temporary photos (lib/images.ts) — replace with real installation photos
+// Real installation photos (lib/images.ts)
 const GALLERY = galleryFor("toldos-residenciales", [
-  "Palillería Siplan cubriendo terraza con alberca",
-  "Toldo fijo de aluminio en acceso de residencia",
-  "Cortinas para terraza sobre deck de madera",
-  "Toldo de fachada en balcón residencial",
-  "Palillería sobre área de jardín en Zapopan",
-  "Cortinas enrollables en sala exterior de residencia",
+  "Toldo retráctil sobre cochera de residencia en Guadalajara",
+  "Toldos fijos sobre accesos de casas en coto residencial",
+  "Toldos fijos en terraza y acceso de residencia con palmeras",
+  "Toldo en ventanal de residencia con jardín",
+  "Instalación de toldo fijo en casa de fraccionamiento",
+  "Toldo retráctil blanco cubriendo cochera",
 ]);
 
 export default function ToldosResidencialesPage() {
@@ -68,7 +68,7 @@ export default function ToldosResidencialesPage() {
             Toldos <span className="text-champagne">Residenciales</span>
           </>
         }
-        subtitle="Terrazas, jardines y fachadas que se viven todo el año. Diseñamos, fabricamos e instalamos toldos a la medida de tu casa en Guadalajara y zona metropolitana."
+        subtitle="Fachadas, terrazas, jardines y cocheras que se viven todo el año. Fabricamos e instalamos toldos a la medida de tu casa en Guadalajara y zona metropolitana."
         image={IMAGES.pageHero.residenciales}
         imageAlt="Terraza con pérgola y alberca en residencia contemporánea"
         breadcrumb={[
@@ -123,7 +123,7 @@ export default function ToldosResidencialesPage() {
       <ProductGallery
         id="gallery-heading"
         title="Hogares que ya disfrutan su exterior"
-        subtitle="Toldos instalados en residencias de Guadalajara, Zapopan y Tlajomulco."
+        subtitle="Toldos fabricados e instalados por nuestro equipo en residencias de Guadalajara y zona metropolitana."
         images={GALLERY}
       />
 

@@ -12,11 +12,11 @@ import { ShieldIcon, ComfortIcon, RetractableIcon } from "@/components/icons/Lux
 export const metadata: Metadata = {
   title: "Toldos Retráctiles Guadalajara — Motorizados y Manuales",
   description:
-    "Instalamos toldos retráctiles en Guadalajara. Sistemas motorizados Somfy, brazos articulados, pérgolas bioclimáticas. Manual y motorizado con sensor de viento. Cotiza hoy.",
+    "Toldos retráctiles en Guadalajara: brazo invisible, punto recto, cofre y caída vertical. Con manivela, motor o control remoto y sensores Somfy de sol, viento y lluvia. Cotización gratis.",
   keywords: [
     "toldos retractiles Guadalajara",
     "toldo motorizado Guadalajara",
-    "toldo retractil brazos articulados",
+    "toldo brazo invisible",
     "toldo motorizado Somfy",
   ],
   alternates: { canonical: `${SITE_URL}/productos/toldos-retractiles` },
@@ -24,37 +24,37 @@ export const metadata: Metadata = {
 
 const FEATURES = [
   {
-    title: "Brazos articulados",
-    desc: "El sistema más popular. Extensión horizontal hasta 6m con inclinación regulable. Ideal para terrazas y balcones.",
+    title: "Brazo invisible",
+    desc: "Brazos articulados que se pliegan bajo el toldo y desaparecen al recogerlo. Ideal para terrazas, cocheras y balcones.",
   },
   {
-    title: "Toldo cofre",
-    desc: "Protege la tela y mecanismo dentro de un cofre de aluminio cuando está recogido. Estética premium, mayor durabilidad.",
+    title: "Brazo con punto recto",
+    desc: "Brazos que abaten la tela hacia el frente para proteger ventanas y aparadores del sol directo.",
   },
   {
-    title: "Pérgola bioclimática",
-    desc: "Lamas orientables que regulan el paso de luz y ventilación. Cierre total con cristal o lonas laterales.",
+    title: "Tejadillo y cofre",
+    desc: "Protegen tela y mecanismo cuando el toldo está recogido. Con manivela o con motor, más durabilidad y mejor acabado.",
   },
   {
-    title: "Motorización Somfy",
-    desc: "Control por app, control remoto o activación por sensor de viento y lluvia. Compatible con domótica.",
+    title: "Caída vertical",
+    desc: "Lona que baja en vertical sobre guías o cables para cerrar costados de terrazas y fachadas del sol bajo.",
   },
 ];
 
 const WHY = [
   { Icon: ShieldIcon, title: "Protección solar", desc: "Reduce hasta 95% la radiación UV en tu terraza." },
   { Icon: ComfortIcon, title: "Protección climática", desc: "Disfruta tu espacio bajo lluvia ligera y viento moderado." },
-  { Icon: RetractableIcon, title: "Control inteligente", desc: "Motorización con app, voz o sensor automático." },
+  { Icon: RetractableIcon, title: "Control inteligente", desc: "Motor Somfy con interruptor, control remoto o sensores de sol, viento y lluvia." },
 ];
 
-// Temporary photos (lib/images.ts) — replace with real installation photos
+// Real installation photos (lib/images.ts)
 const GALLERY = galleryFor("toldos-retractiles", [
-  "Toldo retráctil de brazos articulados en terraza residencial",
-  "Toldo cofre retráctil sobre deck de madera",
-  "Pérgola bioclimática junto a alberca en Zapopan",
-  "Toldo retráctil motorizado con control Somfy en sala exterior",
-  "Toldo retráctil sobre fachada de residencia contemporánea",
-  "Toldos retráctiles Llaza en terraza de hotel",
+  "Toldo retráctil negro de brazo invisible sobre patio con plantas",
+  "Toldo retráctil negro extendido sobre terraza residencial",
+  "Toldo retráctil beige sobre cochera",
+  "Instalación de toldo retráctil en fachada contemporánea",
+  "Toldo retráctil beige visto desde abajo",
+  "Brazo articulado de toldo retráctil",
 ]);
 
 export default function ToldosRetractilesPage() {
@@ -67,7 +67,7 @@ export default function ToldosRetractilesPage() {
             Toldos Retráctiles <span className="text-champagne">en Guadalajara</span>
           </>
         }
-        subtitle="Sistemas retráctiles manuales y motorizados de las mejores marcas europeas. Brazos articulados, cofres, pérgolas bioclimáticas y automatización Somfy para el máximo confort."
+        subtitle="Toldos enrollables de brazo invisible o de punto recto, con manivela o motor. Mecanismos y lonas importados o nacionales, con automatización Somfy."
         image={IMAGES.pageHero.retractiles}
         imageAlt="Terraza de madera con camastros frente al mar"
         breadcrumb={[
@@ -122,7 +122,7 @@ export default function ToldosRetractilesPage() {
       <ProductGallery
         id="gallery-heading"
         title="Toldos retráctiles instalados"
-        subtitle="Sistemas manuales y motorizados en terrazas, fachadas y hoteles de la Zona Metropolitana de Guadalajara."
+        subtitle="Sistemas manuales y motorizados en terrazas, cocheras y fachadas de la Zona Metropolitana de Guadalajara."
         images={GALLERY}
       />
 

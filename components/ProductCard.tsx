@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PRODUCT_ICONS, SpecialIcon, ArrowIcon } from "@/components/icons/LuxuryIcons";
-import { IMAGES } from "@/lib/images";
+import { productImage } from "@/lib/images";
 
 interface ProductCardProps {
   id: string;
@@ -21,7 +21,7 @@ export default function ProductCard({
   specs = [],
 }: ProductCardProps) {
   const Icon = PRODUCT_ICONS[icon] ?? SpecialIcon;
-  const image = IMAGES.products[id];
+  const image = productImage(id);
 
   return (
     <Link
@@ -38,7 +38,7 @@ export default function ProductCard({
             alt=""
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover grayscale-35 brightness-75 transition-all duration-1200 ease-lux group-hover:scale-105 group-hover:grayscale-0"
+            className="object-cover brightness-75 transition-all duration-1200 ease-lux group-hover:scale-105"
           />
         )}
         <div className="absolute inset-0 bg-noir/0 transition-colors duration-500 group-hover:bg-noir/65" />

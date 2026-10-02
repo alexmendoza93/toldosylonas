@@ -16,50 +16,82 @@ export interface GalleryImage {
   height: number;
 }
 
-// Temporary photos (lib/images.ts) — replace with real project photos
-// placed in public/images/projects/
+// Real installation photos (lib/images.ts → IMAGES.projects)
 export const GALLERY_IMAGES: GalleryImage[] = [
   {
-    src: IMAGES.gallery[0],
-    alt: "Toldo residencial en terraza de casa en Zapopan",
+    ...IMAGES.projects[0],
+    alt: "Toldos fijos en fachadas de casas en coto residencial",
     category: "Residencial",
-    width: 1600,
-    height: 1067,
   },
   {
-    src: IMAGES.gallery[1],
-    alt: "Sistema comercial en restaurante de Guadalajara",
-    category: "Comercial",
-    width: 1600,
-    height: 1067,
-  },
-  {
-    src: IMAGES.gallery[2],
-    alt: "Toldo retráctil en jardín residencial",
+    ...IMAGES.projects[1],
+    alt: "Toldo retráctil sobre cochera en residencia de Guadalajara",
     category: "Residencial",
-    width: 1600,
-    height: 1067,
   },
   {
-    src: IMAGES.gallery[3],
-    alt: "Cubierta textil en terraza de hotel en Guadalajara",
+    ...IMAGES.projects[2],
+    alt: "Toldo retráctil en fachada residencial con jardín",
+    category: "Residencial",
+  },
+  {
+    ...IMAGES.projects[3],
+    alt: "Toldo negro con iluminación en fachada de boutique",
     category: "Comercial",
-    width: 1600,
-    height: 1067,
   },
   {
-    src: IMAGES.gallery[4],
-    alt: "Lona industrial para bodega en zona metropolitana",
+    ...IMAGES.projects[4],
+    alt: "Toldos rojos en terraza de restaurante",
+    category: "Comercial",
+  },
+  {
+    ...IMAGES.projects[5],
+    alt: "Toldo corrido en fachada comercial",
+    category: "Comercial",
+  },
+  {
+    ...IMAGES.projects[6],
+    alt: "Toldo fijo en fachada de local comercial",
+    category: "Comercial",
+  },
+  {
+    ...IMAGES.projects[7],
+    alt: "Cortinas de lona con cristal en terraza de restaurante campestre",
     category: "Industrial",
-    width: 1600,
-    height: 1067,
   },
   {
-    src: IMAGES.gallery[5],
-    alt: "Proyecto especial - pérgola con vela de sombra",
+    ...IMAGES.projects[8],
+    alt: "Cierre perimetral de lona naranja con ventanas de cristal",
+    category: "Industrial",
+  },
+  {
+    ...IMAGES.projects[9],
+    alt: "Cubierta de lona tensada sobre estructura metálica",
+    category: "Industrial",
+  },
+  {
+    ...IMAGES.projects[10],
+    alt: "Plaza Paraíso en Tabachines: toldo perimetral continuo de más de 100 metros lineales",
     category: "Especial",
-    width: 1600,
-    height: 1067,
+  },
+  {
+    ...IMAGES.projects[11],
+    alt: "Pérgola con cubierta en roof garden",
+    category: "Especial",
+  },
+  {
+    ...IMAGES.projects[12],
+    alt: "Toldo retráctil negro sobre patio con jardín",
+    category: "Residencial",
+  },
+  {
+    ...IMAGES.projects[13],
+    alt: "Cortinas exteriores enrollables en residencia",
+    category: "Residencial",
+  },
+  {
+    ...IMAGES.projects[14],
+    alt: "Toldo a rayas en fachada de local comercial",
+    category: "Comercial",
   },
 ];
 
@@ -121,7 +153,7 @@ export default function ProjectGallery({ limit, showFilters = true }: Props) {
               alt={img.alt}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="object-cover grayscale brightness-75 transition-all duration-1000 ease-lux group-hover:grayscale-0 group-hover:brightness-90 group-hover:scale-105"
+              className="object-cover brightness-75 transition-all duration-1000 ease-lux group-hover:brightness-90 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-linear-to-t from-noir/90 via-noir/10 to-transparent" />
 

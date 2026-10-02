@@ -11,12 +11,12 @@ import { IMAGES, galleryFor } from "@/lib/images";
 export const metadata: Metadata = {
   title: "Toldos Comerciales Guadalajara — Restaurantes, Hoteles y Negocios",
   description:
-    "Toldos comerciales en Guadalajara para restaurantes, hoteles, plazas y negocios. Terrazas techadas, marquesinas con logotipo y cortinas enrollables. Cotiza sin compromiso.",
+    "Fabricantes de toldos comerciales en Guadalajara para locales, restaurantes, plazas comerciales, hoteles y constructoras. Fachadas, marquesinas y terrazas. Cotización gratis.",
   keywords: [
     "toldos comerciales Guadalajara",
     "toldos para restaurante",
     "marquesinas con logotipo",
-    "toldos para hoteles",
+    "toldos para plazas comerciales",
     "techado de terrazas comerciales",
   ],
   alternates: { canonical: `${SITE_URL}/productos/sistemas-comerciales` },
@@ -24,24 +24,24 @@ export const metadata: Metadata = {
 
 const SOLUTIONS = [
   {
+    name: "Fachadas de locales",
+    use: "Tiendas y boutiques",
+    desc: "Toldos fijos y marquesinas en el color de tu marca que hacen visible tu negocio desde la calle.",
+  },
+  {
     name: "Terrazas de restaurante",
     use: "Restaurantes y cafés",
-    desc: "Cubiertas y palillerías que convierten la terraza en área útil con sol, lluvia o frío.",
+    desc: "Toldos fijos y retráctiles que convierten la terraza en área útil con sol, lluvia o frío.",
   },
   {
-    name: "Marquesinas con marca",
-    use: "Locales y fachadas",
-    desc: "Toldos con logotipo impreso o rotulado que hacen visible tu negocio desde la calle.",
-  },
-  {
-    name: "Cortinas enrollables",
+    name: "Cortinas de lona y cristal",
     use: "Cierres perimetrales",
-    desc: "Cierres transparentes o de tela que protegen del viento y la lluvia sin cerrar el espacio.",
+    desc: "Cierres de lona con ventanas transparentes que protegen del viento y la lluvia sin perder la vista.",
   },
   {
-    name: "Cubiertas para hoteles",
-    use: "Albercas y eventos",
-    desc: "Sombra elegante para albercas, jardines y áreas de eventos que cuidan la experiencia del huésped.",
+    name: "Plazas y constructoras",
+    use: "Proyectos de volumen",
+    desc: "Como fabricantes mayoristas surtimos plazas comerciales, hoteles y desarrollos completos.",
   },
 ];
 
@@ -52,14 +52,14 @@ const BENEFITS = [
   { title: "Instalación coordinada", desc: "Planeamos la obra para interrumpir lo menos posible la operación de tu negocio." },
 ];
 
-// Temporary photos (lib/images.ts) — replace with real installation photos
+// Real installation photos (lib/images.ts)
 const GALLERY = galleryFor("sistemas-comerciales", [
-  "Terraza de restaurante techada en Guadalajara",
-  "Cubierta textil en área de alberca de hotel",
-  "Sombra para camastros en club de playa",
-  "Cubierta para jardín de eventos",
-  "Palillería en terraza de café",
-  "Cortinas enrollables en terraza comercial",
+  "Toldo negro con iluminación en fachada de boutique",
+  "Toldo fijo negro en fachada de local comercial",
+  "Toldo negro sobre aparador de tienda de ropa",
+  "Toldos rojos en terraza de restaurante",
+  "Toldo rojo corrido en fachada de restaurante",
+  "Toldo corrido en fachada comercial",
 ]);
 
 export default function SistemasComercialesPage() {
@@ -69,16 +69,16 @@ export default function SistemasComercialesPage() {
         eyebrow="Espacios que venden"
         title={
           <>
-            Sistemas <span className="text-champagne">Comerciales</span>
+            Toldos <span className="text-champagne">Comerciales</span>
           </>
         }
-        subtitle="Toldos y cubiertas para restaurantes, hoteles y negocios que quieren aprovechar cada metro de su exterior y proyectar una imagen impecable."
+        subtitle="Fabricantes de toldos para locales, restaurantes, plazas comerciales, hoteles y constructoras que quieren aprovechar su exterior y proyectar una imagen impecable."
         image={IMAGES.pageHero.comerciales}
         imageAlt="Terraza de hotel con palmeras y alberca al atardecer"
         breadcrumb={[
           { label: "Inicio", href: "/" },
           { label: "Productos", href: "/productos" },
-          { label: "Sistemas Comerciales" },
+          { label: "Toldos Comerciales" },
         ]}
       />
 
@@ -125,7 +125,7 @@ export default function SistemasComercialesPage() {
       <ProductGallery
         id="gallery-heading"
         title="Negocios que confían en nosotros"
-        subtitle="Restaurantes, hoteles y espacios comerciales en la Zona Metropolitana de Guadalajara."
+        subtitle="Locales, restaurantes y plazas comerciales en la Zona Metropolitana de Guadalajara."
         images={GALLERY}
       />
 

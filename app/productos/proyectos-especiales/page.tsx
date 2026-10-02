@@ -52,14 +52,14 @@ const WHY = [
   { Icon: ComfortIcon, title: "Sombra con estilo", desc: "Espacios frescos y protegidos que se convierten en el punto focal del lugar." },
 ];
 
-// Temporary photos (lib/images.ts) — replace with real installation photos
+// Real installation photos (lib/images.ts)
 const GALLERY = galleryFor("proyectos-especiales", [
-  "Velaria de sombra en jardín con palmeras",
-  "Velas de sombra sobre área de camastros",
-  "Membrana tensada en área social de hotel",
-  "Pérgola con tela junto a alberca residencial",
-  "Cubierta textil para evento en terraza",
-  "Vela de sombra geométrica sobre terraza",
+  "Toldo perimetral continuo de Plaza Paraíso en Tabachines al atardecer",
+  "Toldo perimetral de más de 100 metros lineales en Plaza Paraíso",
+  "Instalación del toldo perimetral en Plaza Paraíso, Zapopan",
+  "Pérgola con cubierta en roof garden",
+  "Pérgola de lamas orientables en terraza residencial",
+  "Cubierta de lona tensada a dos aguas",
 ]);
 
 export default function ProyectosEspecialesPage() {
@@ -122,8 +122,8 @@ export default function ProyectosEspecialesPage() {
 
       <ProductGallery
         id="gallery-heading"
-        title="Arquitectura textil en imágenes"
-        subtitle="Arquitectura textil diseñada para hoteles, residencias, plazas y eventos."
+        title="Proyectos fuera de catálogo"
+        subtitle="Plaza Paraíso en Tabachines: el primer toldo en Guadalajara en cubrir un perímetro continuo, con más de 100 metros lineales y 220 m² de tela acrílica de importación."
         images={GALLERY}
       />
 
